@@ -23,7 +23,7 @@ test = BackEnd()
 
 @app.route('/')
 def index():
-	return test.displayText("asdfasdf")
+	return test.displayImage("https://www.w3schools.com/w3images/fjords.jpg")
 
 if __name__ == '__main__':
 	app.run()
