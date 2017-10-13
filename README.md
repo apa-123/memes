@@ -1,6 +1,5 @@
 # memes
- test2
-To code a simple application
+ To code a simple application
 -Import Flask 
 -Create instance
 -Route to a url
