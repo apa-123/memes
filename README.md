@@ -1,5 +1,5 @@
 # memes
- To code a simple application
+To code a simple application
 -Import Flask 
 -Create instance
 -Route to a url
@@ -160,8 +160,26 @@ Unique URLs/Redirection Behavior:
 	    return ‘The about page’
 Differ in the use of trailing slash. Access the first one without trailing slash redirect to the canonical URL with slash. Access the second one with trailing slash will create 404 “Not Found” error.
 				
-			
-		
+Reddit API
 
- master
+Links that were helpful:
+https://www.reddit.com/dev/api
+http://docs.python-requests.org/en/latest/
+http://www.pythonforbeginners.com/api/how-to-use-reddit-api-in-python
+
+Code used from data hackerspace
+
+import json
+import requests
+
+r = requests.get(
+    'https://reddit.com/r/all.json',
+    headers={'User-Agent': ''}
+)
+r.text # Unformatted text
+
+reddit_json = json.loads(r.text)
+reddit_json
+
+
 
