@@ -17,7 +17,9 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return "Hello World!"
-To run your Flask app
+   ```
+###### To run your Flask app
+```
 $ export FLASK_APP=hello.py -- set on Windows 
 $ flask run		
 ```
