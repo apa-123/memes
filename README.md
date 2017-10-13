@@ -41,10 +41,10 @@ def hello():
     return ‘Hello, World’
 ```
 
-###### Useful Links
-	- http://flask.pocoo.org/docs/0.12/.latex/Flask.pdf
-	- https://github.com/pallets/flask/tree/master/examples/minitwit/
-	- https://conda.io/docs/user-guide/install/linux.html
+###### Helpful Links
+- http://flask.pocoo.org/docs/0.12/.latex/Flask.pdf
+- https://github.com/pallets/flask/tree/master/examples/minitwit/
+- https://conda.io/docs/user-guide/install/linux.html
 
 ## Extra Information:
 
@@ -116,9 +116,9 @@ Any text put in between block body and endblock will basically be text put in be
 ## Reddit API Information:
 
 ###### Helpful links:
-	- https://www.reddit.com/dev/api 
-	- http://docs.python-requests.org/en/latest/
-	- http://www.pythonforbeginners.com/api/how-to-use-reddit-api-in-python
+- https://www.reddit.com/dev/api 
+- http://docs.python-requests.org/en/latest/
+- http://www.pythonforbeginners.com/api/how-to-use-reddit-api-in-python
 
 ###### Example Code: 
 ```
