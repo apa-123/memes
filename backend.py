@@ -12,11 +12,11 @@ class BackEnd:
 		# displayed on the webpage
 		return message
 	
-	def displayImage(self, imageLink):
+	def displayImage(self, name):
 		# User inputs the image Link which is 
 		# displayed on the webpage
 		# WIP
-		return imageLink
+		return render_template('home.html')
 
 # creates instance of the class BackEnd file
 test = BackEnd()
