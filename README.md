@@ -4,12 +4,13 @@ Flask Information
 What is Flask? Webdev framework to manage HTML/CSS -- work with databases
 
 To code a simple application
-	- Import Flask 
-	- Create instance
-	- Route to a url
-	** don’t name your function flask. -- conflicts 
+- Import Flask 
+- Create instance
+- Route to a url
+** don’t name your function flask (conflicts) 
 
-Example program
+Example program:
+```
 from flask import Flask
 app = Flask(__name__)
 
@@ -18,15 +19,19 @@ def hello():
     return "Hello World!"
 To run your Flask app
 $ export FLASK_APP=hello.py -- set on Windows 
-$ flask run						
+$ flask run		
+```
 * Running on http://127.0.0.1:5000/
 
 To debug your Flask app
+```
 $ export FLASK_DEBUG=1 
 $ flask run
+```
 
 Routing
 The route() decorator is used to bind a function to a URL
+```
 @app.route('/') 
 def index(): 
     return 'Index Page'
@@ -34,6 +39,7 @@ def index():
 @app.route('/hello')
 def hello():
     return ‘Hello, World’
+```
 
 Useful Links
 	-http://flask.pocoo.org/docs/0.12/.latex/Flask.pdf
@@ -55,6 +61,7 @@ flask run --host=0.0.0.0 (tell the operating system to listen to all IPs)
 What to do if the Server does not Start: if the module is incorrectly named, will get import error. It will tell you what it tried to import any why failed. Most common reason is a typo (did not create an app object)
 
 Unique URLs/Redirection Behavior: 
+```
 @app.route(‘/projects/’)
 def projects():
     return ‘The project page’
@@ -62,6 +69,7 @@ def projects():
 @app.route(‘/about’)
 def about():
     return ‘The about page’
+```
 Differ in the use of trailing slash. Access the first one without trailing slash redirect to the canonical URL with slash. Access the second one with trailing slash will create 404 “Not Found” error.
 				
 			
@@ -76,18 +84,20 @@ HTML Information:
 Can create a layout.html to simplify the html files-
 
 In the <body> of the layout.html, include
+```
 	{% block body %}{% endblock %}
-	
+```
 Then in the .html file add
+```
 	{% extends ‘layout.html’ %}
 	{% block body %}
 	{% endblock %}
-
+```
 This makes it so that the .html file will have the layout of layout.html
 Any text put in between block body and endblock will basically be text put in between <body> and </body>
 
 Example layout.html file: 
-
+```
 <!DOCTYPE html>
 <html>
 	<head>
@@ -101,7 +111,8 @@ Example layout.html file:
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html
-				
+```
+
 Reddit API Information
 
 Helpful links:
@@ -110,7 +121,7 @@ Helpful links:
 	-http://www.pythonforbeginners.com/api/how-to-use-reddit-api-in-python
 
 Example Code: 
-
+```
 import json
 import requests
 
@@ -122,6 +133,5 @@ r.text # Unformatted text
 
 reddit_json = json.loads(r.text)
 reddit_json
-
-
+```
 
