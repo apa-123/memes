@@ -8,12 +8,17 @@ class BackEnd:
 		return
 		
 	def displayText(self, message):
+		# User inputs string parameter which is 
+		# displayed on the webpage
 		return message
 	
 	def displayImage(self, imageLink):
+		# User inputs the image Link which is 
+		# displayed on the webpage
+		# WIP
 		return imageLink
 
-
+# creates instance of the class BackEnd file
 test = BackEnd()
 
 @app.route('/')
