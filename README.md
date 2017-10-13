@@ -1,5 +1,5 @@
 # memes
-# Flask Information 
+## Flask Information:
 
 What is Flask? Webdev framework to manage HTML/CSS -- work with databases
 
@@ -46,7 +46,7 @@ def hello():
 	-https://github.com/pallets/flask/tree/master/examples/minitwit/
 	-https://conda.io/docs/user-guide/install/linux.html
 
-# Extra Information --
+## Extra Information:
 
 Windows - creating virtual environment
 	conda create -n virtualenv
@@ -73,7 +73,7 @@ def about():
 Differ in the use of trailing slash. Access the first one without trailing slash redirect to the canonical URL with slash. Access the second one with trailing slash will create 404 “Not Found” error.
 				
 			
-# HTML Information:
+## HTML Information:
 
 - Import render_template
 - Create folder with templates
@@ -113,7 +113,7 @@ Any text put in between block body and endblock will basically be text put in be
 </html
 ```
 
-# Reddit API Information
+## Reddit API Information:
 
 ###### Helpful links:
 	-https://www.reddit.com/dev/api 
