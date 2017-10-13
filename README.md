@@ -1,15 +1,15 @@
 # memes
-Flask Information 
+#Flask Information 
 
 What is Flask? Webdev framework to manage HTML/CSS -- work with databases
 
-To code a simple application
+######To code a simple application
 - Import Flask 
 - Create instance
 - Route to a url
 ** don’t name your function flask (conflicts) 
 
-Example program:
+######Example program:
 ```
 from flask import Flask
 app = Flask(__name__)
@@ -23,13 +23,13 @@ $ flask run
 ```
 * Running on http://127.0.0.1:5000/
 
-To debug your Flask app
+######To debug your Flask app
 ```
 $ export FLASK_DEBUG=1 
 $ flask run
 ```
 
-Routing
+######Routing
 The route() decorator is used to bind a function to a URL
 ```
 @app.route('/') 
@@ -41,12 +41,12 @@ def hello():
     return ‘Hello, World’
 ```
 
-Useful Links
+######Useful Links
 	-http://flask.pocoo.org/docs/0.12/.latex/Flask.pdf
 	-https://github.com/pallets/flask/tree/master/examples/minitwit/
 	-https://conda.io/docs/user-guide/install/linux.html
 
-Extra Information --
+#Extra Information --
 
 Windows - creating virtual environment
 	conda create -n virtualenv
@@ -60,7 +60,7 @@ flask run --host=0.0.0.0 (tell the operating system to listen to all IPs)
 					
 What to do if the Server does not Start: if the module is incorrectly named, will get import error. It will tell you what it tried to import any why failed. Most common reason is a typo (did not create an app object)
 
-Unique URLs/Redirection Behavior: 
+######Unique URLs/Redirection Behavior: 
 ```
 @app.route(‘/projects/’)
 def projects():
@@ -73,7 +73,7 @@ def about():
 Differ in the use of trailing slash. Access the first one without trailing slash redirect to the canonical URL with slash. Access the second one with trailing slash will create 404 “Not Found” error.
 				
 			
-HTML Information:
+#HTML Information:
 
 - Import render_template
 - Create folder with templates
@@ -96,7 +96,7 @@ Then in the .html file add
 This makes it so that the .html file will have the layout of layout.html
 Any text put in between block body and endblock will basically be text put in between <body> and </body>
 
-Example layout.html file: 
+######Example layout.html file: 
 ```
 <!DOCTYPE html>
 <html>
@@ -113,14 +113,14 @@ Example layout.html file:
 </html
 ```
 
-Reddit API Information
+#Reddit API Information
 
-Helpful links:
+######Helpful links:
 	-https://www.reddit.com/dev/api 
 	-http://docs.python-requests.org/en/latest/
 	-http://www.pythonforbeginners.com/api/how-to-use-reddit-api-in-python
 
-Example Code: 
+######Example Code: 
 ```
 import json
 import requests
