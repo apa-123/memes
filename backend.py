@@ -16,7 +16,7 @@ class BackEnd:
 		# User inputs the image Link which is 
 		# displayed on the webpage
 		# WIP
-		return render_template('home.html')
+		return render_template('home.html', name=name)
 
 # creates instance of the class BackEnd file
 test = BackEnd()
