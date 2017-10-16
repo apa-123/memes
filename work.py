@@ -23,7 +23,8 @@ def getReddit():
                 username='joshdunigan',
                 password='joshdunigan123')	
 	return reddit
-#following functions only print from hot and of the top 10. Can change it by changing the "hot" and the limit to a higher or lower number. All require parameter that state the subreddit you want.
+#following functions only print from hot and of the top 10. Can change it by changing the "hot" and the limit to a higher or lower number.
+#All require a String parameter that state the subreddit you want.
 
 #get the image link for the top 10 in hot section. Returns list filled with url.
 def getImageUrl(getSubreddit):
@@ -35,7 +36,7 @@ def getImageUrl(getSubreddit):
 	return returnList
 
 #gets the title for the top 10 in hot section. Returns list of Titles.
-def getTitle(getSubreddit)
+def getTitle(getSubreddit):
 	reddit = getReddit()
 	subreddit = reddit.subreddit(getSubreddit)
 	returnList = []
@@ -44,7 +45,7 @@ def getTitle(getSubreddit)
 	return returnList
 
 #gets the score. Returns list of scores.
-def getTitle(getSubreddit)
+def getTitle(getSubreddit):
 	reddit = getReddit()
 	subreddit = reddit.subreddit(getSubreddit)
 	returnList = []
