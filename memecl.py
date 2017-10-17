@@ -41,9 +41,8 @@ class Memes:
 	def __lt__(self, other):
         if self.score < other.score:
             return True
-        elif self.score > other.score:
+        else:
             return False
-        return 0
 
 
 
