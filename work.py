@@ -45,7 +45,7 @@ def getTitle(getSubreddit):
 	return returnList
 
 #gets the score. Returns list of scores.
-def getTitle(getSubreddit):
+def getScore(getSubreddit):
 	reddit = getReddit()
 	subreddit = reddit.subreddit(getSubreddit)
 	returnList = []
