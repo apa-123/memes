@@ -1,58 +1,75 @@
 
 class Memes:
-#Defines the class, this function is needed in all python code
+	"""A meme object. A meme object has the following properties:
+
+	Attributes:
+	title: A string representing the meme's title
+	url: A string representing the meme's url
+	subreddit: The subreddit of the meme
+	score: A float number representing the score the meme gets
+	"""
+
 	def __init__(self, title, url, subreddit, score):
+		"""Return a Meme object whose title is *title*, url is *url*,
+		subreddit is *subreddit*, score is *score*.
+		"""
 		self.title = title
 		self.url = url
 		self.subreddit = subreddit
 		self.score = score
 		
-#takes self as an input and returns the title, enabling users to call this function to get the title
-	def getTitle(self):
+	def get_title(self):
+		"""Return a string representing the title of the meme."""
 		return self.title
 	
-#takes self as an input and returns the URL, enabling users to call this function to get the URL
-	def getURL(self):
+	def get_URL(self):
+		"""Return a string representing the url of the meme."""
 		return self.url
 	
-#takes self as an input and returns the subreddit, enabling users to call this function to get the subreddit
-	def getSubreddit(self):
+	def get_subreddit(self):
+		"""Return the subreddit of the meme."""
 		return self.subreddit
 
-#takes self as an input and returns the score, enabling users to call this function to get the score
-	def getScore(self):
+	def get_score(self):
+		"""Return a float number representing the score of the meme."""
 		return self.score
 
-#takes self and title as an input and sets the title
-	def setTitle(self, title):
+	def set_title(self, title):
+		"""Set the string representing the title of the meme to *title*."""
 		self.title = title
 
-#takes self and URL as an input and sets the URL
-	def setURL(self, url):
+	def set_URL(self, url):
+		"""Set the string representing the url of the meme tp *url*."""
 		self.url = url
 
-#takes self and subreddit as an input and sets the subreddit
-	def setSubreddit(self, subreddit):
+	def set_subreddit(self, subreddit):
+		"""Set the subreddit of subreddit to *subreddit*."""
 		self.subreddit = subreddit
 		
-#takes self and score as an input and sets the score
-	def setScore(self, score):
+	def set_score(self, score):
+		"""Set the float number representing the score of 
+		subreddit to *score*."""
 		self.score = score	
 
-#prints out all of the information about the meme
 	def display(self):
-		print("title = " + self.title, "URL = " + self.url, "Subreddit = " + self.subreddit, "Score = " + str(self.score))
+		"""Prints out all the information about the meme."""
+		print("title = " + self.title, "URL = " + self.url, \
+			"Subreddit = " + self.subreddit, "Score = " + str(self.score))
 
-#defined function in python that enables users to call with reference to any meme
 	def __str__(self):
-		return "title = " + self.title + "URL = " + self.url + "Subreddit = " + self.subreddit + "Score = " + str(self.score)
+		"""Return the string representation of the information in the 
+		meme object. Defined function in python that enables users to call 
+		with reference to any meme."""		
+		return "title = " + self.title + "URL = " + self.url \
+		+ "Subreddit = " + self.subreddit + "Score = " + str(self.score)
 
-#compares the scores of two memes and returns if one is lower than another
 	def __lt__(self, other):
-        if self.score < other.score:
-            return True
-        else:
-            return False
+		"""Compares the scores of two memes and returns if one is 
+		lower than another"""
+		if self.score < other.score:
+			return True
+		else:
+			return False
 
 
 
