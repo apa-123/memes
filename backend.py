@@ -17,7 +17,7 @@ def displayImage(name):
 # home page
 @app.route('/')
 def index():
-	return displayImage("https://www.w3schools.com/w3images/fjords.jpg")
+	return render_template('index.html')
 
 if __name__ == '__main__':
 	app.run()

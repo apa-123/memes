@@ -1,9 +1,6 @@
-<html>
-<head>
-<title>All things Memes!</title>
-</head>
-<!-- The information between the BODY and /BODY tags is displayed.-->
-<body>
+{% extends 'layout.html' %}
+
+{% block body %}
 <h1>Memes</h1>
 <p> The place to see what your friends favorite memes are </p>
 <p><img src="http://epos-uni-paris-saclay.fr/artefact/file/download.php?file=6000&view=2134&embedded=1&description=2134&text=8915" alt="What is a meme?"></p>
@@ -30,7 +27,4 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
-
-
-</body>
-</html>
+{% endblock %}
