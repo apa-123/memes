@@ -23,14 +23,14 @@ class Reddit:
 	def __init__(self, nameOfSubreddit, limits):
 		self.nameOfSubreddit = nameOfSubreddit
 		self.limits = limits
-		reddit = praw.Reddit(client_id='kCrm1Fz7g6alMw',
+		self.reddit = praw.Reddit(client_id='kCrm1Fz7g6alMw',
 	        	client_secret='z3l8kIhB9zYAQl7QUobTOkBGCnQ',
 	                user_agent='testscriptplswork',
 	                username='joshdunigan',
 	                password='joshdunigan123')
-		subreddit = reddit.subreddit(self.nameOfSubreddit)
-		returnList = []
-		iteratethis = self.subreddit.hot(limit = self.limits)
+		self.subreddit = reddit.subreddit(self.nameOfSubreddit)
+		self.returnList = []
+		self.iteratethis = self.subreddit.hot(limit = self.limits)
 
 	def getSubredditName(self):
 		return nameOfSubreddit
@@ -39,7 +39,7 @@ class Reddit:
 		self.nameOfSubreddit = subredditName
 	
 	#following functions only print from hot and of the top 10. Can change it by changing the "hot" and the limit to a higher or lower number. All require a String parameter that state the subreddit you want.
-	
+
 	#get the image link for the top 10 in hot section. Returns list filled with url. Param limit 
 
 	def getImageUrl(self):
