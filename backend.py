@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
+from flask import request
 
 app = Flask(__name__)
 
@@ -18,6 +20,14 @@ def displayImage(name):
 @app.route('/')
 def index():
 	return render_template('index.html')
+
+# user home page
+@app.route('/users')
+def user_home():
+	username = request.args.get('user')
+	print(username)
+	return render_template('user_page.html', username=username)
+
 
 if __name__ == '__main__':
 	app.run()
