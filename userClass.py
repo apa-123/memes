@@ -17,6 +17,9 @@ class User:
 		self.subreddit = data[username]["subreddit"]
 		self.meme = data[username]["meme"]
 
+	def __str__(self):
+		return "Username = " + self.username + "\nFirst Name = " + self.first_name + "\nSecond Name = " + self.second_name + "\nPicturelink = " + self.picture + "\nAge = " + self.age + "\nEducation = " + self.education + "\nGeography = " + self.geography + "\nSubreddit = " + self.subreddit + "\nMeme = " + self.meme
+
 	def returnFirstName(self):
 		return "username = " + self.username + "\nfirst name = " + self.first_name
 
@@ -40,3 +43,4 @@ class User:
 
 	def returnMeme(self):
 		return "username = " + self.username + "\nMeme = " + self.meme
+
