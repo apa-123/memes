@@ -1,5 +1,6 @@
-[
-	{
+{
+	"johndoe" : {
+		"password" : "asdf",
 		"first_name": "John",
 		"second_name": "Doe",
 		"picture": "http://i0.wp.com/cdn.techgyd.com/save-whatsapp-profile-picture-image3.jpg?resize=337%2C337",
@@ -9,7 +10,8 @@
 		"subreddit": "r/funny/comments/79hjij/rip/",
 		"meme": "https://i.redd.it/cb5jelmftsuz.jpg"
 	},
-	{
+	"janedoe" : {
+		"password" : "password",
 		"first_name": "Jane",
 		"second_name": "Doe",
 		"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KiUZJdR7WeC_2RlUdcmeaLXABkFS9IGuRnATDgVlKkBmcNiu",
@@ -19,7 +21,8 @@
 		"subreddit": "r/funny/comments/79hzys/ironically_im_loving_it/",
 		"meme": "https://i.redd.it/4f9gkp0q6tuz.jpg"
 	},
-	{
+	"johnsmith" : {
+		"password" : "test",
 		"first_name": "John",
 		"second_name": "Smith",
 		"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9HcNjFR-tdb0yLhJrj9k7gmeHZ1RyP0PZ6TV_4Lv4CSa53MqKxw",
@@ -29,7 +32,8 @@
 		"subreddit": "r/funny/comments/79g60m/i_didnt_think_about_this_before_but_i_will_now/",
 		"meme": "https://i.redd.it/32ga71fegruz.jpg"
 	},
-	{
+	"janesmith" : {
+		"password" : "123456789",
 		"first_name": "Jane",
 		"second_name": "Smith",
 		"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGkMTkEe4NNNWkgOHdw2Z004hf-NVZkL6a6gf8Aqv0I5XIuFSCQg",
@@ -39,7 +43,8 @@
 		"subreddit": "r/funny/comments/79i3qt/red_being_red/",
 		"meme": "https://i.redd.it/l0o0eyep9tuz.jpg"
 	},
-	{
+	"pacoiglesias" : {
+		"password" : "..........",
 		"first_name": "Paco",
 		"second_name": "Iglesias",
 		"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReU6RgFHt4LfEjABxWObu-KL1M_AL-AoRXVxfAh0htbBGq_JIk",
@@ -49,7 +54,8 @@
 		"subreddit": "r/funny/comments/79ilc2/saw_the_psbattle_on_the_front_page_and_thought_of/",
 		"meme": "https://i.redd.it/5tsqhe7qntuz.jpg"
 	},
-	{
+	"alphabeta" : {
+		"password" : "omega",
 		"first_name": "Alpha",
 		"second_name": "Beta",
 		"picture": "https://i.pinimg.com/736x/d0/b1/c1/d0b1c100c871ee188bfb7e6357c61a38--profile-photography-white-photography.jpg",
@@ -59,4 +65,4 @@
 		"subreddit": "r/funny/comments/79h13y/sounds_about_right/",
 		"meme": "https://i.redd.it/7dkweiwpdsuz.jpg"
 	}
-]
+}
