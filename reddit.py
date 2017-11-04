@@ -43,19 +43,19 @@ class Reddit:
 	#get the image link for the top 10 in hot section. Returns list filled with url. Param limit 
 
 	def getImageUrl(self):
-		for submission in iteratethis:
+		for submission in self.iteratethis:
 	   		self.returnList.append(submission.url)
 		return self.returnList
 
 	#gets the title for the top 10 in hot section. Returns list of Titles.
 	def getTitle(self):
-		for submission in iteratethis:
+		for submission in self.iteratethis:
 	   		self.returnList.append(submission.title)
 		return self.returnList
 
 	#gets the score. Returns list of scores.
 	def getScore(self):
-		for submission in iteratethis:
+		for submission in self.iteratethis:
 	   		self.returnList.append(submission.score)
 		return self.returnList
 
