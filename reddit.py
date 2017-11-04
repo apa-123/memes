@@ -28,7 +28,7 @@ class Reddit:
 	                user_agent='testscriptplswork',
 	                username='joshdunigan',
 	                password='joshdunigan123')
-		self.subreddit = reddit.subreddit(self.nameOfSubreddit)
+		self.subreddit = self.reddit.subreddit(self.nameOfSubreddit)
 		self.returnList = []
 		self.iteratethis = self.subreddit.hot(limit = self.limits)
 
