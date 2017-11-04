@@ -2,24 +2,29 @@
 
 {% block body %}
 
-<div>
-    <div class='header'>
+<div class="container">
+    <div class="jumbotron">
         <h1>USERNAME</h1>
     </div>
-    <div id='profile' class='sidebar'>
-
+    <div class="col-md-4">
+        <div class="container" id="info">
+            <h3>user name</h3>
+            <p>this is where user information goes</p>
+        </div>
     </div>
-    <div class='post-list'>
-        <div class='posts'>
-            <div class='user-info'>
+    <div class="col-md-8">
+        <div class="container" id="posts">
+            <div class="col-md-3" id="p_info">
+                <p>poster information</p>
             </div>
-            <div class='post-img'>
-            </div>
-            <div class='comments'>
-
+            <div class="col-md-9">
+                <div class="container" id="img">
+                    <p>this is where the image will go</p>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 
 {% endblock %}
