@@ -14,6 +14,7 @@ def displayText(message):
 def displayImage(name):
 	# User inputs the image Link which is 
 	# displayed on the webpage
+	# WIP
 	return render_template('home.html', name=name)
 
 # home page
