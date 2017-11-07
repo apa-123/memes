@@ -11,21 +11,53 @@
     <div class="col-md-4">
         <div class="container" id="info">
             <h3>{{ username }}</h3>
-            <p>this is where user information goes</p>
+            <p>{{ user_info }}</p>
         </div>
     </div>
-    <div class="col-md-8">
-        <div class="container" id="posts">
-            <div class="col-md-3" id="p_info">
-                <p>poster information</p>
-            </div>
-            <div class="col-md-9">
-                <div class="container" id="img">
-                    <p>this is where the image will go</p>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container" id="posts">
+                <div class="col-md-3" id="p_info">
+                    <p>{{ post_1_user_info }}</p>
+                </div>
+                <div class="col-md-9">
+                    <div class="container" id="img">
+                        <img src="{{ img1_url }}">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row">
+            <div class="col-md-8">
+                <div class="container" id="posts">
+                    <div class="col-md-3" id="p_info">
+                        <p>{{ post_2_user_info }}</p>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="container" id="img">
+                            <img src="{{ img_2_url }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col-md-8">
+                    <div class="container" id="posts">
+                        <div class="col-md-3" id="p_info">
+                            <p>{{ post_1_user_info }}</p>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="container" id="img">
+                                <img src="{{ img_3_url }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 </div>
 
