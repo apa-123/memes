@@ -26,12 +26,12 @@ class Reddit:
 	                user_agent='testscriptplswork',
 	                username='joshdunigan',
 	                password='joshdunigan123')
-		self.subreddit = self.reddit.subreddit(self.nameOfSubreddit)
+		self.subreddit = self.reddit.subreddit(nameOfSubreddit)
 		self.returnList = []
-		self.iteratethis = self.subreddit.hot(limit = self.limits)
+		self.iteratethis = self.subreddit.top(time_filter = 'day', limit = limits)
 
 	def getSubredditName(self):
-		return nameOfSubreddit
+		return self.nameOfSubreddit
 
 	def setSubreddit(self, subredditName):
 		self.nameOfSubreddit = subredditName
@@ -57,17 +57,3 @@ class Reddit:
 	   		self.returnList.append(submission.score)
 		return self.returnList
 
-#testing section
-'''
-reddit = praw.Reddit(client_id='kCrm1Fz7g6alMw',
-        client_secret='z3l8kIhB9zYAQl7QUobTOkBGCnQ',
-        user_agent='testscriptplswork',
-        username='joshdunigan',
-        password='joshdunigan123')	
-wikipage = reddit.subreddit('iama').wiki['proof']
-print(wikipage.content_md)
-#wikipage = reddit.subreddit('dogs').wiki['description']
-#print(wikipage.content_md)
-#for page in reddit.subreddit('dogs').wiki:
-	#print(page)
-'''
