@@ -57,3 +57,7 @@ class Reddit:
 	   		self.returnList.append(submission.score)
 		return self.returnList
 
+	def getAuthor(self):
+		for submission in self.iteratethis:
+			self.returnList.append(submission.author)
+		return self.returnList
