@@ -44,4 +44,4 @@ def category():
 	return render_template('user_page.html', name=name, img_1_url=urls[0], img_2_url=urls[1], img_3_url=urls[2], source_img="content/reddit_logo.png")
 
 if __name__ == '__main__':
-	app.run()
+	app.run(debug=True)
