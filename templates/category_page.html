@@ -1,64 +1,61 @@
-{% extends 'layout.html' %}
-{% block navbar %}
-{{ super() }}   
-{% endblock  %}
-{% block body %}
+{% extends 'layout.html' %} {% block navbar %} {{ super() }} {% endblock %} {% block body %}
 
 <div class="jumbotron">
-    <h1>{{ name }}</h1>
-</div>
-<div class="col-md-4">
-    <div class="container" id="info">
-        <h3>{{ name }}</h3>
-        <p>{{ cat_info }}</p>
+    <div class="container">
+        <h1>{{ name }}</h1>
     </div>
 </div>
+<div class="container">
 <div class="row">
-    <div class="col-md-8">
-        <div class="container posts">
-            <div class="col-md-3" id="p_info">
-                <img src="{{ source_img }}" >
-                <p>{{ post_1_u_info }}</p>
-            </div>
-            <div class="col-md-9">
-                <div class="container main-img">
-                    <img src="{{ img_1_url }}">
+    <div class="col-md-2">
+        <div class="container" id="info">
+            <h3>{{ name }}</h3>
+            <p>{{ cat_info }}</p>
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        <div class="row">
+            <div class="container posts">
+                <div class="col-md-3" id="p_info">
+                    <img src="{{ source_img }}">
+                    <p>{{ post_1_u_info }}</p>
+                </div>
+                <div class="col-md-9">
+                    <div class="container main-img">
+                        <img src="{{ img_1_url }}">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-8">
-        <div class="container posts">
-            <div class="col-md-3" id="p_info">
-                <img src="{{ source_img }}" >                    
-                <p>{{ post_2_u_info }}</p>
-            </div>
-            <div class="col-md-9">
-                <div class="container main-img">
-                    <img src="{{ img_2_url }}">
+        <div class="row">
+            <div class="container posts">
+                <div class="col-md-3" id="p_info">
+                    <img src="{{ source_img }}">
+                    <p>{{ post_2_u_info }}</p>
+                </div>
+                <div class="col-md-9">
+                    <div class="container main-img">
+                        <img src="{{ img_2_url }}">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-8">
-        <div class="container posts">
-            <div class="col-md-3" id="p_info">
-                <img src="{{ source_img }}" >
-                <p>{{ post_1_u_info }}</p>
-            </div>
-            <div class="col-md-9">
-                <div class="container main-img">
-                    <img src="{{ img_3_url }}">
+        <div class="row">
+            <div class="container posts">
+                <div class="col-md-3" id="p_info">
+                    <img src="{{ source_img }}">
+                    <p>{{ post_1_u_info }}</p>
+                </div>
+                <div class="col-md-9">
+                    <div class="container main-img">
+                        <img src="{{ img_3_url }}">
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
-
+</div>
 {% endblock %}
