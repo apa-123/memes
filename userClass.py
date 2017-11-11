@@ -2,9 +2,6 @@ import json
 from reddit import Reddit
 
 class User:
-
-
-
 	"""Class containing information about the user.
 	
 	Attributes:
@@ -111,7 +108,13 @@ class User:
 		else:
 			return "Not Available"
 
-class Public:
+class PublicUser:
+	"""Class containing information about the user.
+	
+	Attributes:
+	username: ng that represents the username
+	is_valid_user: Boolean that is true when the username exists
+	"""
 	def __init__(self, username):
 		json_data = open("dummy_user.json").read()
 		data = json.loads(json_data)
