@@ -34,4 +34,4 @@ def category():
 	return render_template('user_page.html', name=name)
 
 if __name__ == '__main__':
-	app.run()
+	app.run(debug=True)
