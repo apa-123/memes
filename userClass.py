@@ -1,42 +1,59 @@
 import json
+from reddit import Reddit
 
 class User:
+
+
+
 	"""Class containing information about the user.
 	
 	Attributes:
-	username: String that represents the username
-	password: String that represents the password
+	username: ng that represents the username
+	password: ng that represents the password
 	is_valid: Boolean that is true when the password is correct for given username
 	"""
 
 	def __init__(self, username, password):
 		json_data=open("dummy_user.json").read()
 		data = json.loads(json_data)
-		if data[username]["password"] == password:
-			self.username = username
-			self.first_name = data[username]["first_name"]
-			self.second_name = data[username]["second_name"]
-			self.picture = data[username]["picture"]
-			self.age = data[username]["age"]
-			self.education = data[username]["education"]
-			self.geography = data[username]["geography"]
-			self.subreddit = data[username]["subreddit"]
-			self.meme = data[username]["meme"]
-			self.is_valid = True
+		if username in data["accounts"]:			
+			if data["accounts"][username]["password"] == password:
+				self.username = username
+				self.first_name = data["accounts"][username]["first_name"]
+				self.second_name = data["accounts"][username]["second_name"]
+				self.picture = data["accounts"][username]["picture"]
+				self.age = data["accounts"][username]["age"]
+				self.education = data["accounts"][username]["education"]
+				self.geography = data["accounts"][username]["geography"]
+				self.subreddit = data["accounts"][username]["subreddit"]
+				self.is_valid = True
+			else:
+				self.username = username
+				self.first_name = ""
+				self.second_name = ""
+				self.picture = ""
+				self.age = ""
+				self.education = ""
+				self.geography = ""
+				self.subreddit = ""
+				self.is_valid = False
 		else:
-			self.username = username
-			self.first_name = ""
-			self.second_name = ""
-			self.picture = ""
-			self.age = ""
-			self.education = ""
-			self.geography = ""
-			self.subreddit = ""
-			self.meme = ""
+			self.username = "Invalid User"
+			self.first_name = "Invalid User"
+			self.second_name = "Invalid User"
+			self.picture = "Invalid User"
+			self.age = "Invalid User"
+			self.education = "Invalid User"
+			self.geography = "Invalid User"
+			self.subreddit = "Invalid User"
 			self.is_valid = False
 
 	def __str__(self):
-		return "Username = " + self.username + "\nFirst Name = " + self.first_name + "\nSecond Name = " + self.second_name + "\nPicturelink = " + self.picture + "\nAge = " + self.age + "\nEducation = " + self.education + "\nGeography = " + self.geography + "\nSubreddit = " + self.subreddit + "\nMeme = " + self.meme
+		return "Username = " + self.username + "\nFirst Name = " \
+		+ self.first_name + "\nSecond Name = " + self.second_name \
+		+ "\nPicturelink = " + self.picture + "\nAge = " + self.age \
+		+ "\nEducation = " + self.education + "\nGeography = " \
+		+ self.geography + "\nSubreddit = " + str(self.subreddit)
 
 	def returnFirstName(self):
 		return "username = " + self.username + "\nfirst name = " + self.first_name
@@ -61,3 +78,5 @@ class User:
 
 	def returnMeme(self):
 		return "username = " + self.username + "\nMeme = " + self.meme
+
+
