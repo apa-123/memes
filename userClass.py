@@ -10,7 +10,8 @@ class User:
 	Attributes:
 	username: ng that represents the username
 	password: ng that represents the password
-	is_valid: Boolean that is true when the password is correct for given username
+	is_valid_user: Boolean that is true when the username exists
+	is_valid_pass: Boolean that is true when password is correct for username
 	"""
 
 	def __init__(self, username, password):
@@ -21,12 +22,14 @@ class User:
 				self.username = username
 				self.first_name = data["accounts"][username]["first_name"]
 				self.second_name = data["accounts"][username]["second_name"]
+				self.bio = data["accounts"][username]["bio"]
 				self.picture = data["accounts"][username]["picture"]
 				self.age = data["accounts"][username]["age"]
 				self.education = data["accounts"][username]["education"]
 				self.geography = data["accounts"][username]["geography"]
 				self.subreddit = data["accounts"][username]["subreddit"]
-				self.is_valid = True
+				self.is_valid_user = True
+				self.is_valid_pass = True
 			else:
 				self.username = username
 				self.first_name = ""
@@ -36,7 +39,8 @@ class User:
 				self.education = ""
 				self.geography = ""
 				self.subreddit = ""
-				self.is_valid = False
+				self.is_valid_user = True
+				self.is_valid_pass = False
 		else:
 			self.username = "Invalid User"
 			self.first_name = "Invalid User"
@@ -46,37 +50,63 @@ class User:
 			self.education = "Invalid User"
 			self.geography = "Invalid User"
 			self.subreddit = "Invalid User"
-			self.is_valid = False
+			self.is_valid_user = False
+			self.is_valid_pass = False
 
 	def __str__(self):
-		return "Username = " + self.username + "\nFirst Name = " \
-		+ self.first_name + "\nSecond Name = " + self.second_name \
-		+ "\nPicturelink = " + self.picture + "\nAge = " + self.age \
-		+ "\nEducation = " + self.education + "\nGeography = " \
-		+ self.geography + "\nSubreddit = " + str(self.subreddit)
+		if self.is_valid_user:
+			return "Username = " + self.username + "\nFirst Name = " \
+				+ self.first_name + "\nSecond Name = " + self.second_name \
+				+ "\nPicturelink = " + self.picture + "\nAge = " + self.age \
+				+ "\nEducation = " + self.education + "\nGeography = " \
+				+ self.geography + "\nSubreddit = " + str(self.subreddit)
+		else:
+			return "Not Available"
 
 	def returnFirstName(self):
-		return "username = " + self.username + "\nfirst name = " + self.first_name
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\nfirst name = " + self.first_name
+		else:
+			return "Not Available"
 
 	def returnSecondName(self):
-		return "username = " + self.username + "\nsecond name = " + self.second_name
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\nsecond name = " + self.second_name
+		else:
+			return "Not Available"
+
+	def returnBio(self):
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\nBiography: " + self.bio
+		else:
+			return "Not Available"
 
 	def returnPicture(self):
-		return "username = " + self.username + "\npicture = " + self.picture
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\npicture = " + self.picture
+		else:
+			return "Not Available"
 
 	def returnAge(self):
-		return "username = " + self.username + "\nAge = " + self.age
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\nAge = " + self.age
+		else:
+			return "Not Available"
 
 	def returnEducation(self):
-		return "username = " + self.username + "\nEducation = " + self.education
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\nEducation = " + self.education
+		else:
+			return "Not Available"
 
 	def returnGeography(self):
-		return "username = " + self.username + "\nGeography = " + self.geography
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\nGeography = " + self.geography
+		else:
+			return "Not Available"
 
 	def returnSubreddit(self):
-		return "username = " + self.username + "\nSubreddit = " + self.subreddit
-
-	def returnMeme(self):
-		return "username = " + self.username + "\nMeme = " + self.meme
-
-
+		if self.is_valid_user and self.is_valid_pass:
+			return "username = " + self.username + "\nSubreddit = " + self.subreddit
+		else:
+			return "Not Available"
