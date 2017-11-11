@@ -10,7 +10,8 @@ class User:
 	Attributes:
 	username: ng that represents the username
 	password: ng that represents the password
-	is_valid: Boolean that is true when the password is correct for given username
+	is_valid_user: Boolean that is true when the username exists
+	is_valid_pass: Boolean that is true when password is correct for username
 	"""
 
 	def __init__(self, username, password):
@@ -107,11 +108,5 @@ class User:
 	def returnSubreddit(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return "username = " + self.username + "\nSubreddit = " + self.subreddit
-		else:
-			return "Not Available"
-
-	def returnMeme(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nMeme = " + self.meme
 		else:
 			return "Not Available"
