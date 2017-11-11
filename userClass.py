@@ -128,6 +128,7 @@ class PublicUser:
 			self.education = data["accounts"][username]["education"]
 			self.geography = data["accounts"][username]["geography"]
 			self.subreddit = data["accounts"][username]["subreddit"]
+			self.meme = data["accounts"][username]["meme"]
 			self.is_valid_user = True
 		else:
 			self.username = "Invalid User"
@@ -138,6 +139,7 @@ class PublicUser:
 			self.education = "Invalid User"
 			self.geography = "Invalid User"
 			self.subreddit = "Invalid User"
+			self.meme = "Invalid User"
 			self.is_valid_user = False
 
 	def __str__(self):
@@ -146,7 +148,17 @@ class PublicUser:
 				   + self.first_name + "\nSecond Name = " + self.second_name \
 				   + "\nPicturelink = " + self.picture + "\nAge = " + self.age \
 				   + "\nEducation = " + self.education + "\nGeography = " \
-				   + self.geography + "\nSubreddit = " + str(self.subreddit)
+				   + self.geography  + "\nMeme = " + self.meme + "\nSubreddit = " + str(self.subreddit)
+		else:
+			return "Not Available"
+
+	def returnTitle(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\ntitle = " self.title
+
+	def returnMeme(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nImage = " + self.meme
 		else:
 			return "Not Available"
 
