@@ -110,3 +110,87 @@ class User:
 			return "username = " + self.username + "\nSubreddit = " + self.subreddit
 		else:
 			return "Not Available"
+
+class Public:
+	def __init__(self, username):
+		json_data = open("dummy_user.json").read()
+		data = json.loads(json_data)
+		if username in data["accounts"]:
+			self.username = username
+			self.first_name = data["accounts"][username]["first_name"]
+			self.second_name = data["accounts"][username]["second_name"]
+			self.bio = data["accounts"][username]["bio"]
+			self.picture = data["accounts"][username]["picture"]
+			self.age = data["accounts"][username]["age"]
+			self.education = data["accounts"][username]["education"]
+			self.geography = data["accounts"][username]["geography"]
+			self.subreddit = data["accounts"][username]["subreddit"]
+			self.is_valid_user = True
+		else:
+			self.username = "Invalid User"
+			self.first_name = "Invalid User"
+			self.second_name = "Invalid User"
+			self.picture = "Invalid User"
+			self.age = "Invalid User"
+			self.education = "Invalid User"
+			self.geography = "Invalid User"
+			self.subreddit = "Invalid User"
+			self.is_valid_user = False
+
+	def __str__(self):
+		if self.is_valid_user:
+			return "Username = " + self.username + "\nFirst Name = " \
+				   + self.first_name + "\nSecond Name = " + self.second_name \
+				   + "\nPicturelink = " + self.picture + "\nAge = " + self.age \
+				   + "\nEducation = " + self.education + "\nGeography = " \
+				   + self.geography + "\nSubreddit = " + str(self.subreddit)
+		else:
+			return "Not Available"
+
+	def returnFirstName(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nfirst name = " + self.first_name
+		else:
+			return "Not Available"
+
+	def returnSecondName(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nsecond name = " + self.second_name
+		else:
+			return "Not Available"
+
+	def returnBio(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nBiography: " + self.bio
+		else:
+			return "Not Available"
+
+	def returnPicture(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\npicture = " + self.picture
+		else:
+			return "Not Available"
+
+	def returnAge(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nAge = " + self.age
+		else:
+			return "Not Available"
+
+	def returnEducation(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nEducation = " + self.education
+		else:
+			return "Not Available"
+
+	def returnGeography(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nGeography = " + self.geography
+		else:
+			return "Not Available"
+
+	def returnSubreddit(self):
+		if self.is_valid_user:
+			return "username = " + self.username + "\nSubreddit = " + self.subreddit
+		else:
+			return "Not Available"
