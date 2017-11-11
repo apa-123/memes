@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import url_for
 from flask import render_template
 from flask import request
 
@@ -23,11 +24,14 @@ def index():
 
 # user home page
 @app.route('/users')
-def user_home():
-	username = request.args.get('user')
-	print(username)
-	return render_template('user_page.html', username=username)
+def user():
+	name = request.args.get('user')
+	return render_template('user_page.html', name=name)
 
+@app.route('/category')
+def category():
+	name = request.args.get('user')
+	return render_template('user_page.html', name=name)
 
 if __name__ == '__main__':
 	app.run()
