@@ -154,7 +154,7 @@ class PublicUser:
 
 	def returnTitle(self):
 		if self.is_valid_user:
-			return "username = " + self.username + "\ntitle = " self.title
+			return "username = " + self.username + "\ntitle = " + self.title
 
 	def returnMeme(self):
 		if self.is_valid_user:
