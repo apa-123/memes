@@ -15,7 +15,11 @@ body {
 
 
 .jumbotron {
-	color: grey;
     padding: 5%;
     font-family: "Comic Sans MS";
+}
+
+.postButton{
+	padding: 5%;
+	font-family: "Comic Sans MS";
 }
