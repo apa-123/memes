@@ -104,7 +104,7 @@ class User:
 
 	def returnSubreddit(self):
 		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nSubreddit = " + self.subreddit
+			return self.subreddit
 		else:
 			return "Not Available"
 
@@ -206,6 +206,6 @@ class PublicUser:
 
 	def returnSubreddit(self):
 		if self.is_valid_user:
-			return "username = " + self.username + "\nSubreddit = " + self.subreddit
+			return self.subreddit
 		else:
 			return "Not Available"
