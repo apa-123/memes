@@ -39,13 +39,13 @@ Overloading of str class is used to return all attributes of a category in a str
 These functions allow individual attributes of each category to be access as they are returned
 """
 
-    def return_picture(self):
+    def get_picture(self):
         return "username = " + self.username + "\npicture = " + self.picture
 
-    def return_subreddit(self):
+    def get_subreddit(self):
         return "username = " + self.username + "\nSubreddit = " + self.subreddit
 
-    def return_bio(self):
+    def get_bio(self):
         return "username = " + self.username + "\nBio = " + self.bio
 
 
