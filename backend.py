@@ -83,6 +83,8 @@ def get_public_user(user):
 def index():
     '''
     Renders the index page.
+
+    @return: html of index page
     '''
     return render_template('index.html')
 
@@ -91,6 +93,8 @@ def index():
 def public_user_page():
     '''
     Renders the user page.
+
+    @return: html of index page with image URLs
     '''
 
     # Gets the target category from the URL
@@ -110,6 +114,8 @@ def public_user_page():
 def category_page():
     '''
     Renders the category page.
+
+    @return: html of cateogry page with image URLs
     '''
 
     # Gets the target category from the URL
