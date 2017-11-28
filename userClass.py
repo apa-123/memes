@@ -75,7 +75,3 @@ class User:
 		"""Returns a list representing a list of subreddits that the user
 		is subscribed to."""
 		return self.subreddit
-
-
-a = User("")
-print(a)
