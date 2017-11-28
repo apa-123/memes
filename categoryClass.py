@@ -4,7 +4,7 @@ from reddit import Reddit
 
 class Category:
     """
-    Class containing information about the categories that exist. This is different from the User class because there is no password verification that exists with this. 
+    Class containing information about the categories that exist. No password verification that exists  
 
     Attributes:
     self: always an attribute of the __init__ function
@@ -30,13 +30,13 @@ class Category:
             self.is_valid_cat = ''
 
 """ 
-    Overloading of str class is used to return all attributes of a category in a string (like the toString method)
+Overloading of str class is used to return all attributes of a category in a string (like the toString method)
 """
     def __str__(self):
         return "Username = " + self.username + self.first_name + "\nSecond Name = " + self.second_name \
                + "\nPicturelink = " + self.picture + self.bio + "\nSubreddit = " + str(self.subreddit)
 """
-    These functions allow individual attributes of each category to be access as they are returned
+These functions allow individual attributes of each category to be access as they are returned
 """
 
     def return_picture(self):
