@@ -8,6 +8,15 @@ from userClass import User
 from userClass import PublicUser
 from categoryClass import Category
 
+'''
+This class uses the User, PublicUser, Meme and Category classes 
+to render the user and category pages.
+
+This is done using a Flask app. Read more about Flask here:
+http://flask.pocoo.org/
+
+'''
+
 app = Flask(__name__)
 
 # Number of posts to render
@@ -84,8 +93,10 @@ def public_user_page():
     Renders the user page.
     '''
 
-    # Initializes the PublicUser object
+    # Gets the target category from the URL
     name = request.args.get('user')
+
+    # Initializes the PublicUser object
     user = init_public_user(name)
     
     # Gets the data from the API
@@ -101,8 +112,10 @@ def category_page():
     Renders the category page.
     '''
 
-    # Initializes the PublicUser object
+    # Gets the target category from the URL
     name = request.args.get('cat')
+
+    # Initializes the PublicUser object
     category = init_category(name)
     
     # Gets the data from the API
