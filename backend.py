@@ -84,9 +84,11 @@ def public_user_page():
     Renders the user page.
     '''
 
+    # Initializes the PublicUser object
     name = request.args.get('user')
     user = init_public_user(name)
-
+    
+    # Gets the data from the API
     [img_urls, titles, scores, authors] = get_public_user(user)
 
     return render_template('category_page.html', name=name,
@@ -99,9 +101,11 @@ def category_page():
     Renders the category page.
     '''
 
+    # Initializes the PublicUser object
     name = request.args.get('cat')
     category = init_category(name)
     
+    # Gets the data from the API
     [img_urls, titles, scores, authors] = get_category(category)
     
     return render_template('category_page.html', name=name,
