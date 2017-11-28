@@ -17,6 +17,9 @@ def init_category(name):
     '''
     Creates a new category object which points to the category with
     the specified name.
+
+    @param: the name of the category
+    @return: Category object pointing to given category
     '''
     return Category(name)
 
@@ -24,6 +27,9 @@ def init_public_user(name):
     '''
     Creates a new public user object which points to the user with
     the specified name.
+
+    @param: the name of the user
+    @return: PublicUser object pointing to a given user 
     '''
     return PublicUser(name)
 
@@ -31,7 +37,8 @@ def get_category(category):
     '''
     Gets the information from the specified public category object.
 
-    Returns a 2D parallel list: [img_urls, titles, scores, authors]
+    @param: Category object representing the target category
+    @return: a 2D parallel list: [img_urls, titles, scores, authors]
     '''
     
     # initializes the reddit praw wrapper
@@ -49,7 +56,8 @@ def get_public_user(user):
     '''
     Gets the information from the specified public user object.
 
-    Returns a 2D parallel list: [img_urls, titles, scores, authors]
+    @param: the PublicUser object that points to the target user
+    @return: a 2D parallel list: [img_urls, titles, scores, authors]
     '''
     # initializes the reddit praw wrapper
     reddit = Reddit(user.returnSubreddit()[2], NUM_POSTS)
