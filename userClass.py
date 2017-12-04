@@ -22,7 +22,6 @@ class User:
 				self.bio = data["accounts"][username]["bio"]
 				self.picture = data["accounts"][username]["picture"]
 				self.age = data["accounts"][username]["age"]
-				self.education = data["accounts"][username]["education"]
 				self.geography = data["accounts"][username]["geography"]
 				self.subreddit = data["accounts"][username]["subreddit"]
 				self.is_valid_user = True
@@ -33,7 +32,6 @@ class User:
 				self.second_name = ""
 				self.picture = ""
 				self.age = ""
-				self.education = ""
 				self.geography = ""
 				self.subreddit = ""
 				self.is_valid_user = True
@@ -44,7 +42,6 @@ class User:
 			self.second_name = "Invalid User"
 			self.picture = "Invalid User"
 			self.age = "Invalid User"
-			self.education = "Invalid User"
 			self.geography = "Invalid User"
 			self.subreddit = "Invalid User"
 			self.is_valid_user = False
@@ -55,54 +52,48 @@ class User:
 			return "Username = " + self.username + "\nFirst Name = " \
 				+ self.first_name + "\nSecond Name = " + self.second_name \
 				+ "\nPicturelink = " + self.picture + "\nAge = " + self.age \
-				+ "\nEducation = " + self.education + "\nGeography = " \
+				+ "\nGeography = " \
 				+ self.geography + "\nSubreddit = " + str(self.subreddit)
 		else:
 			return "Not Available"
 
-	def returnFirstName(self):
+	def get_first(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return "username = " + self.username + "\nfirst name = " + self.first_name
 		else:
 			return "Not Available"
 
-	def returnSecondName(self):
+	def get_second(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return "username = " + self.username + "\nsecond name = " + self.second_name
 		else:
 			return "Not Available"
 
-	def returnBio(self):
+	def get_bio(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return "username = " + self.username + "\nBiography: " + self.bio
 		else:
 			return "Not Available"
 
-	def returnPicture(self):
+	def get_picture(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return "username = " + self.username + "\npicture = " + self.picture
 		else:
 			return "Not Available"
 
-	def returnAge(self):
+	def get_age(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return "username = " + self.username + "\nAge = " + self.age
 		else:
 			return "Not Available"
 
-	def returnEducation(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nEducation = " + self.education
-		else:
-			return "Not Available"
-
-	def returnGeography(self):
+	def get_geography(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return "username = " + self.username + "\nGeography = " + self.geography
 		else:
 			return "Not Available"
 
-	def returnSubreddit(self):
+	def get_subreddit(self):
 		if self.is_valid_user and self.is_valid_pass:
 			return self.subreddit
 		else:
@@ -125,7 +116,6 @@ class PublicUser:
 			self.bio = data["accounts"][username]["bio"]
 			self.picture = data["accounts"][username]["picture"]
 			self.age = data["accounts"][username]["age"]
-			self.education = data["accounts"][username]["education"]
 			self.geography = data["accounts"][username]["geography"]
 			self.subreddit = data["accounts"][username]["subreddit"]
 			self.meme = data["accounts"][username]["meme"]
@@ -136,7 +126,6 @@ class PublicUser:
 			self.second_name = "Invalid User"
 			self.picture = "Invalid User"
 			self.age = "Invalid User"
-			self.education = "Invalid User"
 			self.geography = "Invalid User"
 			self.subreddit = "Invalid User"
 			self.meme = "Invalid User"
@@ -147,64 +136,58 @@ class PublicUser:
 			return "Username = " + self.username + "\nFirst Name = " \
 				   + self.first_name + "\nSecond Name = " + self.second_name \
 				   + "\nPicturelink = " + self.picture + "\nAge = " + self.age \
-				   + "\nEducation = " + self.education + "\nGeography = " \
+					+ "\nGeography = " \
 				   + self.geography  + "\nMeme = " + self.meme + "\nSubreddit = " + str(self.subreddit)
 		else:
 			return "Not Available"
 
-	def returnTitle(self):
+	def get_title(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\ntitle = " + self.title
 
-	def returnMeme(self):
+	def get_meme(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\nImage = " + self.meme
 		else:
 			return "Not Available"
 
-	def returnFirstName(self):
+	def get_first(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\nfirst name = " + self.first_name
 		else:
 			return "Not Available"
 
-	def returnSecondName(self):
+	def get_second(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\nsecond name = " + self.second_name
 		else:
 			return "Not Available"
 
-	def returnBio(self):
+	def get_bio(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\nBiography: " + self.bio
 		else:
 			return "Not Available"
 
-	def returnPicture(self):
+	def get_picture(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\npicture = " + self.picture
 		else:
 			return "Not Available"
 
-	def returnAge(self):
+	def get_age(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\nAge = " + self.age
 		else:
 			return "Not Available"
 
-	def returnEducation(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\nEducation = " + self.education
-		else:
-			return "Not Available"
-
-	def returnGeography(self):
+	def get_geography(self):
 		if self.is_valid_user:
 			return "username = " + self.username + "\nGeography = " + self.geography
 		else:
 			return "Not Available"
 
-	def returnSubreddit(self):
+	def get_subreddit(self):
 		if self.is_valid_user:
 			return self.subreddit
 		else:
