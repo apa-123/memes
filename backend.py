@@ -4,6 +4,11 @@ from flask import url_for
 from flask import render_template
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
+from reddit import Reddit
+from memecl import Memes
+from userClass import User
+from userClass import PublicUser
+from categoryClass import Category
 
 '''
 This class uses the User, PublicUser, Meme and Category classes 
@@ -21,16 +26,14 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
 db = SQLAlchemy(app)
 
-from reddit import Reddit
-from memecl import Memes
-from userClass import User
-from userClass import PublicUser
-from categoryClass import Category
-from userClass import Users
 
 # Number of posts to render
 NUM_POSTS = 3
-
+def createUser(username, password, first_name, second_name, bio, picture, age, education, geography, subreddit):
+    user = Users(username = username, password = password, first_name = first_name, second_name = second_name, 
+        bio = bio, picture = picture, age = age, education = education, geography = geography, subreddit = subreddit)
+    db.session.add(user)
+    db.session.commit()
 def init_category(name):
     '''
     Creates a new category object which points to the category with
@@ -142,3 +145,19 @@ def category_page():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    first_name = db.Column(db.String(120), nullable=False)
+    second_name = db.Column(db.String(120), nullable=False)
+    bio = db.Column(db.String(120), nullable=False)
+    picture = db.Column(db.String(120))
+    age = db.Column(db.Integer, nullable=False)
+    education = db.Column(db.String(120))
+    geography = db.Column(db.String(120))
+    subreddit = db.Column(db.String(200))
+
+    def __repr__(self):
+        return '<User %r>' % self.username
