@@ -1,5 +1,23 @@
 import json
 from reddit import Reddit
+from backend import db
+
+class Users(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	username = db.Column(db.String(80), unique=True, nullable=False)
+	password = db.Column(db.String(120), nullable=False)
+	first_name = db.Column(db.String(120), nullable=False)
+	second_name = db.Column(db.String(120), nullable=False)
+	bio = db.Column(db.String(120), nullable=False)
+	picture = db.Column(db.String(120))
+	age = db.Column(db.Integer, nullable=False)
+	education = db.Column(db.String(120))
+	geography = db.Column(db.String(120))
+	subreddit = db.Column(db.String(200))
+
+	def __repr__(self):
+		return '<User %r>' % self.username
+
 
 class User:
 	"""Class containing information about the user.

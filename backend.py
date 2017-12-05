@@ -1,14 +1,9 @@
+import os
 from flask import Flask
 from flask import url_for
 from flask import render_template
 from flask import request
-from reddit import Reddit
-from memecl import Memes
-from userClass import User
-from userClass import PublicUser
-from categoryClass import Category
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 '''
 This class uses the User, PublicUser, Meme and Category classes 
@@ -24,8 +19,14 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
-SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 db = SQLAlchemy(app)
+
+from reddit import Reddit
+from memecl import Memes
+from userClass import User
+from userClass import PublicUser
+from categoryClass import Category
+from userClass import Users
 
 # Number of posts to render
 NUM_POSTS = 3
