@@ -6,11 +6,9 @@
 			"second_name": "Doe",
 			"picture": "http://i0.wp.com/cdn.techgyd.com/save-whatsapp-profile-picture-image3.jpg?resize=337%2C337",
 			"age": "22",
-			"education": "undergraduate",
 			"geography": "California",
 			"subreddit": ["funny", "politics", "nba"],
-			"bio" : "funny guy",
-			"meme": "http://i0.kym-cdn.com/photos/images/newsfeed/001/217/729/f9a.jpg"
+			"bio" : "funny guy"
 		},	
 		"janedoe" : {
 			"password" : "password",
@@ -18,11 +16,9 @@
 			"second_name": "Doe",
 			"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KiUZJdR7WeC_2RlUdcmeaLXABkFS9IGuRnATDgVlKkBmcNiu",
 			"age": "17",
-			"education": "undergraduate",
 			"geography": "Maine",
 			"subreddit": ["funny", "news", "pics"],
-			"bio" : "funny girl",
-			"meme" : "https://fthmb.tqn.com/f2E0oJLHltGUCxwGiDw8bRkIm08=/768x0/filters:no_upscale()/dicaprio3-583e33155f9b58d5b19e3a00.jpg"
+			"bio" : "funny girl"
 		},
 		"johnsmith" : {
 			"password" : "test",
@@ -30,7 +26,6 @@
 			"second_name": "Smith",
 			"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9HcNjFR-tdb0yLhJrj9k7gmeHZ1RyP0PZ6TV_4Lv4CSa53MqKxw",
 			"age": "26",
-			"education": "phD",
 			"geography": "Illinois",
 			"subreddit": ["gaming", "leagueoflegends", "Overwatch"],
 			"bio" : "hahahah"
@@ -41,7 +36,6 @@
 			"second_name": "Smith",
 			"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGkMTkEe4NNNWkgOHdw2Z004hf-NVZkL6a6gf8Aqv0I5XIuFSCQg",
 			"age": "35",
-			"education": "high school",
 			"geography": "Michigan",
 			"subreddit": ["funny", "videos", "pics"],
 			"bio" : "sdfssdjkasdlf"
@@ -52,7 +46,6 @@
 			"second_name": "Iglesias",
 			"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReU6RgFHt4LfEjABxWObu-KL1M_AL-AoRXVxfAh0htbBGq_JIk",
 			"age": "12",
-			"education": "phD",
 			"geography": "Ohio",
 			"subreddit": ["politics", "nba", "MMA"],
 			"bio" : "asdfasdf"
@@ -63,7 +56,6 @@
 			"second_name": "Beta",
 			"picture": "https://i.pinimg.com/736x/d0/b1/c1/d0b1c100c871ee188bfb7e6357c61a38--profile-photography-white-photography.jpg",
 			"age": "44",
-			"education": "graduate",
 			"geography": "Texas",
 			"subreddit": ["gifs", "leagueoflegends", "dankmemes"],
 			"bio" : "asfdasdfg"
