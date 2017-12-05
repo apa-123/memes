@@ -2,114 +2,27 @@ import json
 from reddit import Reddit
 
 class User:
-	"""Class containing information about the user.
+	"""A User object containing information about the user.
 	
 	Attributes:
-	username: ng that represents the username
-	password: ng that represents the password
-	is_valid_user: Boolean that is true when the username exists
-	is_valid_pass: Boolean that is true when password is correct for username
+	username: A string representing the username
+	first_name: A string representing the first name of the user
+	second_name: A string representing the last name of the user
+	bio: A string representing the biography of the user
+	picture: A string representing a link to the picture of the user's profile pic
+	age: A int representing the age of the user
+	geography: A string representing the location of the user
+	subreddit: A list representing the subreddits that the user is subscribed to
 	"""
 
-	def __init__(self, username, password):
+	def __init__(self, username):
+		""" Return a User object whose username is *username*. The first name, last
+		name, biography, picture, age, geography, and subreddit is taken
+		from the database.
+		"""
 		json_data=open("dummy_user.json").read()
 		data = json.loads(json_data)
 		if username in data["accounts"]:			
-			if data["accounts"][username]["password"] == password:
-				self.username = username
-				self.first_name = data["accounts"][username]["first_name"]
-				self.second_name = data["accounts"][username]["second_name"]
-				self.bio = data["accounts"][username]["bio"]
-				self.picture = data["accounts"][username]["picture"]
-				self.age = data["accounts"][username]["age"]
-				self.geography = data["accounts"][username]["geography"]
-				self.subreddit = data["accounts"][username]["subreddit"]
-				self.is_valid_user = True
-				self.is_valid_pass = True
-			else:
-				self.username = username
-				self.first_name = ""
-				self.second_name = ""
-				self.picture = ""
-				self.age = ""
-				self.geography = ""
-				self.subreddit = ""
-				self.is_valid_user = True
-				self.is_valid_pass = False
-		else:
-			self.username = "Invalid User"
-			self.first_name = "Invalid User"
-			self.second_name = "Invalid User"
-			self.picture = "Invalid User"
-			self.age = "Invalid User"
-			self.geography = "Invalid User"
-			self.subreddit = "Invalid User"
-			self.is_valid_user = False
-			self.is_valid_pass = False
-
-	def __str__(self):
-		if self.is_valid_user:
-			return "Username = " + self.username + "\nFirst Name = " \
-				+ self.first_name + "\nSecond Name = " + self.second_name \
-				+ "\nPicturelink = " + self.picture + "\nAge = " + self.age \
-				+ "\nGeography = " \
-				+ self.geography + "\nSubreddit = " + str(self.subreddit)
-		else:
-			return "Not Available"
-
-	def get_first(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nfirst name = " + self.first_name
-		else:
-			return "Not Available"
-
-	def get_second(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nsecond name = " + self.second_name
-		else:
-			return "Not Available"
-
-	def get_bio(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nBiography: " + self.bio
-		else:
-			return "Not Available"
-
-	def get_picture(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\npicture = " + self.picture
-		else:
-			return "Not Available"
-
-	def get_age(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nAge = " + self.age
-		else:
-			return "Not Available"
-
-	def get_geography(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return "username = " + self.username + "\nGeography = " + self.geography
-		else:
-			return "Not Available"
-
-	def get_subreddit(self):
-		if self.is_valid_user and self.is_valid_pass:
-			return self.subreddit
-		else:
-			return "Not Available"
-
-class PublicUser:
-	"""Class containing information about the user.
-	
-	Attributes:
-	username: ng that represents the username
-	is_valid_user: Boolean that is true when the username exists
-	"""
-	def __init__(self, username):
-		json_data = open("dummy_user.json").read()
-		data = json.loads(json_data)
-		if username in data["accounts"]:
 			self.username = username
 			self.first_name = data["accounts"][username]["first_name"]
 			self.second_name = data["accounts"][username]["second_name"]
@@ -118,8 +31,6 @@ class PublicUser:
 			self.age = data["accounts"][username]["age"]
 			self.geography = data["accounts"][username]["geography"]
 			self.subreddit = data["accounts"][username]["subreddit"]
-			self.meme = data["accounts"][username]["meme"]
-			self.is_valid_user = True
 		else:
 			self.username = "Invalid User"
 			self.first_name = "Invalid User"
@@ -128,67 +39,46 @@ class PublicUser:
 			self.age = "Invalid User"
 			self.geography = "Invalid User"
 			self.subreddit = "Invalid User"
-			self.meme = "Invalid User"
-			self.is_valid_user = False
+
 
 	def __str__(self):
-		if self.is_valid_user:
-			return "Username = " + self.username + "\nFirst Name = " \
-				   + self.first_name + "\nSecond Name = " + self.second_name \
-				   + "\nPicturelink = " + self.picture + "\nAge = " + self.age \
-					+ "\nGeography = " \
-				   + self.geography  + "\nMeme = " + self.meme + "\nSubreddit = " + str(self.subreddit)
-		else:
-			return "Not Available"
+		"""Prints out all the information about the user."""
+		return "Username = " + self.username + "\nFirst Name = " \
+			+ self.first_name + "\nSecond Name = " + self.second_name \
+			+ "\nPicturelink = " + self.picture + "\nAge = " + self.age \
+			+  "\nGeography = " + self.geography + "\nSubreddit = " \
+			+ str(self.subreddit)
 
-	def get_title(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\ntitle = " + self.title
+	def returnFirstName(self):
+		"""Returns a string representing the first name of the user."""
+		return self.first_name
 
-	def get_meme(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\nImage = " + self.meme
-		else:
-			return "Not Available"
+	def returnSecondName(self):
+		"""Returns a string representing the last name of the user."""
+		return self.second_name
 
-	def get_first(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\nfirst name = " + self.first_name
-		else:
-			return "Not Available"
 
-	def get_second(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\nsecond name = " + self.second_name
-		else:
-			return "Not Available"
+	def returnBio(self):
+		"""Returns a string representing the biography of the user."""
+		return self.bio
 
-	def get_bio(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\nBiography: " + self.bio
-		else:
-			return "Not Available"
 
-	def get_picture(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\npicture = " + self.picture
-		else:
-			return "Not Available"
+	def returnPicture(self):
+		"""Returns a string representing the link of the user's profile picture"""
+		return self.picture
 
-	def get_age(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\nAge = " + self.age
-		else:
-			return "Not Available"
 
-	def get_geography(self):
-		if self.is_valid_user:
-			return "username = " + self.username + "\nGeography = " + self.geography
-		else:
-			return "Not Available"
+	def returnAge(self):
+		"""Returns a int representing the age of the user."""
+		return self.age
 
-	def get_subreddit(self):
-		if self.is_valid_user:
-			return self.subreddit
-		else:
-			return "Not Available"
+
+	def returnGeography(self):
+		"""Returns a string representing the location of the user."""
+		return self.geography
+
+
+	def returnSubreddit(self):
+		"""Returns a list representing a list of subreddits that the user
+		is subscribed to."""
+		return self.subreddit

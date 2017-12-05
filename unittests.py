@@ -1,4 +1,6 @@
 import unittest2
+import categoryClass.py
+import userClass.py
 
 #WIP figuring out unit tests
 
@@ -16,26 +18,22 @@ class TestCategoryMethods(unittest.TestCase):
 class TestUserMethods(unittest.TestCase):
 
     def test_get_first(self):
-        self.assertEqual(self.get_first(), )
+        self.assertEqual(self.returnFirstName(), )
 
     def test_get_second(self):
-        self.assertEqual(self.get_second(), )
+        self.assertEqual(self.returnSecondName(), )
 
     def test_get_bio(self):
-        self.assertEqual(self.get_bio(), )
+        self.assertEqual(self.returnBio(), )
 
     def test_get_picture(self):
-        self.assertEqual(self.get_picture(), )
+        self.assertEqual(self.returnAge(), )
 
     def test_get_age(self):
-        self.assertEqual(self.get_age(), )
+        self.assertEqual(self.returnGeography(), )
     
     def test_get_geography(self):
-        self.assertEqual(self.get_geography(), )
-    
-    def test_get_subreddit(self):
-        self.assertEqual(self.get_subreddit(), )
- 
+        self.assertEqual(self.returnSubreddit, )
 
 if __name__ == '__main__':
     unittest2.main()
