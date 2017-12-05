@@ -7,6 +7,12 @@ from memecl import Memes
 from userClass import User
 from userClass import PublicUser
 from categoryClass import Category
+from flask_sqlalchemy import SQLAlchemy
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 '''
 This class uses the User, PublicUser, Meme and Category classes 
@@ -18,6 +24,8 @@ http://flask.pocoo.org/
 '''
 
 app = Flask(__name__)
+app.config.from_object('config')
+db = SQLAlchemy(app)
 
 # Number of posts to render
 NUM_POSTS = 3
