@@ -1,6 +1,6 @@
 import unittest2
-import categoryClass.py
-import userClass.py
+import categoryClass import Category
+import userClass import User
 
 #WIP figuring out unit tests
 
