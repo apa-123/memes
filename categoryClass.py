@@ -21,23 +21,21 @@ class Category:
             self.subreddit = data["categories"][username]["subreddit"]
             self.bio = data["categories"][username]["bio"]
             self.is_valid_cat = True
-
         else:
             self.username = "Invalid Category"
             self.picture = "Invalid Category"
             self.subreddit = "Invalid Category"
             self.bio = "Invalid Category"
-            self.is_valid_cat = ''
-
-""" 
-Overloading of str class is used to return all attributes of a category in a string (like the toString method)
-"""
+            self.is_valid_cat = ""
+    """ 
+    Overloading of str class is used to return all attributes of a category in a string (like the toString method)
+    """
     def __str__(self):
         return "Username = " + self.username + self.first_name + "\nSecond Name = " + self.second_name \
                + "\nPicturelink = " + self.picture + self.bio + "\nSubreddit = " + str(self.subreddit)
-"""
-These functions allow individual attributes of each category to be access as they are returned
-"""
+    """
+    These functions allow individual attributes of each category to be access as they are returned
+    """
 
     def get_picture(self):
         return "username = " + self.username + "\npicture = " + self.picture

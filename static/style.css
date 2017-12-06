@@ -33,3 +33,17 @@ body {
     border-spacing: 10px 50px;
     margin-bottom: 20px;
 }
+
+.login-box{
+    padding: 5%;
+    font-family: "Comic Sans MS";
+    align-content: center;
+}
+
+.login {
+    width: 30%;
+    height: 70%;
+    text-align: center;
+    background-color: white;
+    border: 3px solid grey;
+}
