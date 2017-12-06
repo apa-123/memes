@@ -1,12 +1,12 @@
 body {
-	background-color: #ADD8E6;
+	background-color: rgb(108, 196, 209);
 }
 
 .posts .main-img img {
 	display: block;
 	margin: auto;
     width: 40%;
-    border: 3px solid grey;
+    border: 3px solid rgb(119, 113, 113);
     border-collapse: separate;
     border-spacing: 10px 50px;
     margin-bottom: 20px;
@@ -15,13 +15,20 @@ body {
 
 
 .jumbotron {
-    padding: 5%;
-    font-family: "Comic Sans MS";
+    background-color: rgb(70, 87, 88);
+    padding: 3%;
+    font-family: "Optima";
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+
 }
 
 .postButton{
 	padding: 5%;
-	font-family: "Comic Sans MS";
+    font-family: "Optima";
+    /*background-color: grey;
+    */
 }
 
 .imgcontainer img{
@@ -32,4 +39,9 @@ body {
     border-collapse: separate;
     border-spacing: 10px 50px;
     margin-bottom: 20px;
+}
+
+.navbar{
+    background-color: rgb(70, 87, 88);
+    font-family: "Optima";
 }

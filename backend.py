@@ -5,7 +5,6 @@ from flask import request
 from reddit import Reddit
 from memecl import Memes
 from userClass import User
-from userClass import PublicUser
 from categoryClass import Category
 
 app = Flask(__name__)
