@@ -2,10 +2,38 @@ body {
 	background-color: #ADD8E6;
 }
 
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rows .posts {
+    margin: auto;
+    width: 40%;
+}
+
+.post .user-info {
+    display: table;
+}
+
+.author-pic img {
+/*    display: table-cell;
+*/    margin: 20px;
+    width: 5%;
+    float: left;
+}
+
+
+.post .user-info .author {
+    float: left;
+    display: table-cell;
+    text-align: center;
+}
+
 .posts .main-img img {
 	display: block;
 	margin: auto;
-    width: 40%;
+    width: 100%;
     border: 3px solid grey;
     border-collapse: separate;
     border-spacing: 10px 50px;

@@ -126,7 +126,9 @@ def category_page():
     # Gets the data from the API
     [img_urls, titles, scores, authors] = get_category(category)
     
-    return render_template('category_page.html', name=name, img_urls=img_urls, source_img="content/reddit_logo.png")
+    return render_template('category_page.html', numPost=range(NUM_POSTS), name=name, 
+        img_urls=img_urls, titles=titles, scores=scores, authors=authors,
+        source_img="static/content/reddit_logo.png")
 
 @app.route('/login')
 def login_page():
