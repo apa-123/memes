@@ -16,10 +16,10 @@ http://flask.pocoo.org/
 
 '''
 
-app = Flask(__name__)
+app = Flask('Memes')
 
 # Number of posts to render
-NUM_POSTS = 3
+NUM_POSTS = 10
 
 def init_category(name):
     '''
@@ -126,9 +126,7 @@ def category_page():
     # Gets the data from the API
     [img_urls, titles, scores, authors] = get_category(category)
     
-    return render_template('category_page.html', name=name,
-    img_1_url=img_urls[0], img_2_url=img_urls[1], img_3_url=img_urls[2],
-    source_img="content/reddit_logo.png")
+    return render_template('category_page.html', name=name, img_urls=img_urls, source_img="content/reddit_logo.png")
 
 @app.route('/login')
 def login_page():
@@ -140,7 +138,7 @@ def login_page():
 
     return render_template('login_page.html')
 
-@app.route('/new_user')
+@app.route('/signup')
 def create_user_page():
     '''
     Renders the create User page.
@@ -148,7 +146,7 @@ def create_user_page():
     @return: html of create user page
     '''
 
-    return render_template('create_user_page.html')
+    return render_template('signup.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
