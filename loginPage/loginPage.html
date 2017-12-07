@@ -1,0 +1,115 @@
+<style type="text/css">
+html {
+  background-color: #CEECF5;
+}
+header {
+  top: 100px;
+  left: 150px;
+  font-size: 3rem;
+  font-family: Comic Sans MS;
+  position: absolute;
+}
+
+input {
+  width: 400px;
+  padding: 0 20px;
+  background-color: #A9D0F5;
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 3;
+}
+
+span {
+  font-size: 1.2rem;
+}
+
+button {
+  background-color: #A9D0F5;
+  font-family: Comic Sans MS;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+.explanation {
+  top: 180px;
+  left: 150px;
+  font-size: 1.2rem;
+  font-family: Comic Sans MS;
+  position: absolute;
+}
+
+.username {
+  top: 300px;
+  left: 150px;
+  font-size: 2rem;
+  font-family: Comic Sans MS;
+  position: absolute;
+}
+
+.password {
+  top: 500px;
+  left: 150px;
+  font-size: 2rem;
+  font-family: Comic Sans MS;
+  position: absolute;
+}
+
+.container {
+  top: 630px;
+  left: 150px;
+  position: absolute;
+}
+
+.signUp {
+  top: 750px;
+  left: 150px;
+  position: absolute;
+}
+</style>
+
+<!-- Button to open the modal login form -->
+<!-- <button onclick="document.getElementById('id01').style.display='block'">Login</button> -->
+
+<!-- The Modal -->
+<!DOCTYPE html>
+<html>
+  <header>LOGIN</header>
+
+  <div class="explanation">
+    <p>Identify yourself with this website. All request to log into this website are logged.
+    <br>Repeated failed login attempts will result in lock out.
+    </p>
+  </div>
+
+  <div class="username">
+    <label><b>Username</b></label>
+    <br>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+  </div>
+
+  <div class="password">
+    <label><b>Password</b></label>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="psw">Forgot <a href="#">password?</a></span>
+    <br>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+  </div>
+
+  <div class="container">
+    Remember me
+    <input type="checkbox" checked="checked">
+    <br><br>
+    <button type="submit">Login</button>           
+  </div>
+
+  <div class="signUp">
+    <label><b>New User?</b></label>
+    <a href="form.html"><button type="button">Sign Up!</button></a>
+  </div>
+</html>
+  
