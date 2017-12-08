@@ -12,21 +12,20 @@ class Category:
     """
 
     def __init__(self, username):
-        json_data = open("dummy_user.json").read()
-        data = json.loads(json_data)
-        if username in data["categories"]:
-            self.username = username
-            self.picture = data["categories"][username]["picture"]
-            self.subreddit = data["categories"][username]["subreddit"]
-            self.bio = data["categories"][username]["bio"]
-            self.is_valid_cat = True
-
-        else:
-            self.username = "Invalid Category"
-            self.picture = "Invalid Category"
-            self.subreddit = "Invalid Category"
-            self.bio = "Invalid Category"
-            self.is_valid_cat = False
+        data = Categories.query.all()
+        for u in data:
+            if u.username == username:
+                self.username = u.username
+                self.bio = u.bio
+                self.picture = u.picture
+                self.subreddit = u.subreddit
+                self.is_valid_cat = True
+                return
+        self.username = "Invalid User"
+        self.bio = "Invalid User"
+        self.picture = "Invalid User"
+        self.subreddit = "Invalid User"
+        self.is_valid_cat = False
 
 
     def __str__(self):
