@@ -143,6 +143,5 @@ def category_page():
 if __name__ == '__main__':
     app.run(debug=True)
 
-from userClass import User
-from userClass import PublicUser
-from categoryClass import Category
+from userClass import *
+from categoryClass import *
