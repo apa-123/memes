@@ -22,6 +22,7 @@ class User:
 		"""
 		data = Users.query.all()
 		for u in data:
+			print(u.username)
 			if u.username == username:
 				self.username = u.username
 				self.first_name = u.first_name
@@ -33,6 +34,7 @@ class User:
 				self.geography = u.geography
 				self.subreddit = u.subreddit
 				self.is_valid_user = True
+				return
 		self.username = "Invalid User"
 		self.first_name = "Invalid User"
 		self.second_name = "Invalid User"
