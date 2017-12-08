@@ -146,7 +146,7 @@ def login_page():
     @return: html of login page
     '''
 
-    return render_template('login_page.html')
+    return render_template('loginPage.html')
 
 @app.route('/signup')
 def create_user_page():
@@ -156,7 +156,7 @@ def create_user_page():
     @return: html of create user page
     '''
 
-    return render_template('signup.html')
+    return render_template('form.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
