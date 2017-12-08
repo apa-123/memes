@@ -46,7 +46,7 @@ from backend import db
 class Categories(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    bio = db.Column(db.String(120), nullable=False)
+    bio = db.Column(db.String(1200), nullable=False)
     picture = db.Column(db.String(120))
     subreddit = db.Column(db.String(200), nullable=False)
 
