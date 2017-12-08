@@ -42,4 +42,14 @@ class Category:
     def returnBio(self):
         return "username = " + self.username + "\nBio = " + self.bio
 
+from backend import db
 
+class Categories(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    bio = db.Column(db.String(120), nullable=False)
+    picture = db.Column(db.String(120))
+    subreddit = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self):
+        return '<Category %r>' % self.username

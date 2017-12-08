@@ -22,18 +22,18 @@ class User:
 		"""
 		data = Users.query.all()
 		for u in data:
-			if u.username == username:
-				self.username = u.username
-				self.first_name = u.first_name
-				self.second_name = u.second_name
-				self.bio = u.bio
-				self.picture = u.picture
-				self.age = u.age
-				self.education = u.education
-				self.geography = u.geography
-				self.subreddit = u.subreddit
-				self.is_valid_user = True
-				return
+				if u.username == username:
+					self.username = u.username
+					self.first_name = u.first_name
+					self.second_name = u.second_name
+					self.bio = u.bio
+					self.picture = u.picture
+					self.age = u.age
+					self.education = u.education
+					self.geography = u.geography
+					self.subreddit = u.subreddit
+					self.is_valid_user = True
+					return
 		self.username = "Invalid User"
 		self.first_name = "Invalid User"
 		self.second_name = "Invalid User"

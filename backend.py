@@ -6,7 +6,6 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from reddit import Reddit
 from memecl import Memes
-from categoryClass import Category
 
 '''
 This class uses the User, PublicUser, Meme and Category classes 
@@ -146,3 +145,4 @@ if __name__ == '__main__':
 
 from userClass import User
 from userClass import PublicUser
+from categoryClass import Category
