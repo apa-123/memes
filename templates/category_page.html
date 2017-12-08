@@ -9,17 +9,26 @@
     {% for post in numPost %}
         <div class="row">
             <div class="posts">
-                <div class="user-info">
-                    <div class="author-pic">
-                        <img src="{{source_img}}">
-                    </div>
-                    <div class="author">
-                        <h1>author here</h1>
-                    </div>
-
+                <div class="title">
+<!--                     <em>{{titles[post]}}</em>
+ -->                    <em>title here</em>
                 </div>
                 <div class="main-img">
                     <img src="{{img_urls[post]}}">
+                </div>
+                <div class="info">
+                    <div class="user-info">
+                        <div class="author-pic">
+                            <img src="{{source_img}}">
+                        </div>
+                        <div class="author">
+    <!--                         <em>{{authors[post]}}</em>
+     -->                        <em>author here</em>
+                        </div>
+                    </div>
+                    <div class="post-info">
+                        <em>Score: {{scores[post]}}</em>
+                    </div>
                 </div>
             </div>
         </div>

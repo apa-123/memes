@@ -2,14 +2,18 @@ body {
 	background-color: #ADD8E6;
 }
 
-.row {
-    margin-left: auto;
+.rows {
     margin-right: auto;
+    margin-left: auto;
 }
-
-.rows .posts {
-    margin: auto;
-    width: 40%;
+.posts {
+    margin-right: auto;
+    margin-left: auto;
+    border: 3px solid grey;
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+    margin-bottom: 20px;
+    width: 30%;
 }
 
 .post .user-info {
@@ -17,8 +21,6 @@ body {
 }
 
 .author-pic img {
-/*    display: table-cell;
-*/    margin: 20px;
     width: 5%;
     float: left;
 }
@@ -26,7 +28,7 @@ body {
 
 .post .user-info .author {
     float: left;
-    display: table-cell;
+    vertical-align: middle;
     text-align: center;
 }
 
@@ -34,13 +36,14 @@ body {
 	display: block;
 	margin: auto;
     width: 100%;
-    border: 3px solid grey;
-    border-collapse: separate;
-    border-spacing: 10px 50px;
-    margin-bottom: 20px;
 }
 
-
+.posts .info {
+    margin: 10px;
+    border: 3px solid black;
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+}
 
 .jumbotron {
     padding: 5%;

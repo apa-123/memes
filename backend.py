@@ -19,7 +19,7 @@ http://flask.pocoo.org/
 app = Flask('Memes')
 
 # Number of posts to render
-NUM_POSTS = 10
+NUM_POSTS = 5
 
 def init_category(name):
     '''
@@ -125,7 +125,7 @@ def category_page():
     
     # Gets the data from the API
     [img_urls, titles, scores, authors] = get_category(category)
-    
+
     return render_template('category_page.html', numPost=range(NUM_POSTS), name=name, 
         img_urls=img_urls, titles=titles, scores=scores, authors=authors,
         source_img="static/content/reddit_logo.png")
