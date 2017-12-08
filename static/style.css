@@ -1,12 +1,13 @@
 body {
-	background-color: #ADD8E6;
+    background-image: url("/static/content/collage.jpg");
+
 }
 
 .posts .main-img img {
 	display: block;
 	margin: auto;
     width: 40%;
-    border: 3px solid grey;
+    border: 3px solid rgb(255, 255, 255);
     border-collapse: separate;
     border-spacing: 10px 50px;
     margin-bottom: 20px;
@@ -15,21 +16,46 @@ body {
 
 
 .jumbotron {
-    padding: 5%;
-    font-family: "Comic Sans MS";
+    background-color: rgb(44, 83, 85);
+    padding: 3%;
+    font-family: "Optima";
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    border: 3px solid rgb(255, 255, 255);
+
+
 }
 
 .postButton{
 	padding: 5%;
-	font-family: "Comic Sans MS";
+    font-family: "Optima";
+
 }
 
 .imgcontainer img{
 	display: block;
 	margin: auto;
     width: 40%;
-    border: 3px solid grey;
+    border: 3px solid rgb(255, 255, 255);
     border-collapse: separate;
     border-spacing: 10px 50px;
     margin-bottom: 20px;
 }
+
+.navbar{
+    background-color: rgb(44, 83, 85);
+    font-family: "Optima";
+    border: 3px solid rgb(255, 255, 255);
+}
+
+.nav.navbar-nav li a {
+    color: white;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: rgb(44, 83, 85);
+    border: 3px solid rgb(255, 255, 255);    
+}
+
+.dropdown-menu{background:rgba(0,0,0,0.5); color:white; }

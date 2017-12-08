@@ -5,7 +5,6 @@ from flask import request
 from reddit import Reddit
 from memecl import Memes
 from userClass import User
-from userClass import PublicUser
 from categoryClass import Category
 
 '''
@@ -90,6 +89,13 @@ def index():
 
 # user home page
 @app.route('/users')
+
+def user():
+	name = request.args.get('user')
+	user = initUser(name)
+	[urls, titles, scores, authors] = getUser(user)
+	return render_template('category_page.html',name=name, img_1_url=urls[0], img_2_url=urls[1], img_3_url=urls[2], source_img="content/reddit_logo.png")
+
 def public_user_page():
     '''
     Renders the user page.
@@ -109,6 +115,7 @@ def public_user_page():
     return render_template('category_page.html', name=name,
     img_1_url=img_urls[0], img_2_url=img_urls[1], img_3_url=img_urls[2],
     source_img="content/reddit_logo.png")
+
 
 @app.route('/category')
 def category_page():
