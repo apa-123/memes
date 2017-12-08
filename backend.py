@@ -1,11 +1,11 @@
+import os
 from flask import Flask
 from flask import url_for
 from flask import render_template
 from flask import request
+from flask_sqlalchemy import SQLAlchemy
 from reddit import Reddit
 from memecl import Memes
-from userClass import User
-from categoryClass import Category
 
 '''
 This class uses the User, PublicUser, Meme and Category classes 
@@ -18,7 +18,20 @@ http://flask.pocoo.org/
 
 app = Flask('Memes')
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
+db = SQLAlchemy(app)
+
+
 # Number of posts to render
+
+def createUser(username, password, first_name, second_name, bio, picture, age, education, geography, subreddit):
+    user = Users(username = username, password = password, first_name = first_name, second_name = second_name, 
+        bio = bio, picture = picture, age = age, education = education, geography = geography, subreddit = subreddit)
+    db.session.add(user)
+    db.session.commit()
+
 NUM_POSTS = 5
 
 def init_category(name):
@@ -160,3 +173,6 @@ def create_user_page():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+from userClass import *
+from categoryClass import *

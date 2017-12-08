@@ -28,12 +28,14 @@ class Reddit:
 		self.subreddit = self.praw.subreddit(nameOfSubreddit)
 
 
-		#Initializies a list used to return the information.
-		self.returnList = []
+		#Initializies a list used to return the information
 
 
-		#Gets the limits number of posts from the "top" section of the subreddit.
-		self.posts = self.subreddit.top(time_filter = 'day', limit = limits)
+		self.urlList = []
+		self.titleList = []
+		self.authorList = []
+		self.scoreList = []
+
 
 	def getSubredditName(self):
 		"""	Return the name of the Subreddit."""
@@ -45,21 +47,21 @@ class Reddit:
 		self.subreddit = self.praw.subreddit(nameOfSubreddit)
 
 	def getImageUrl(self):
-		"""Returns a list full of Urls of the posts."""
-		self.returnList = [submission.url for submission in self.posts]
-		return self.returnList
+		for submissions in self.subreddit.top(time_filter = 'day', limit = self.limits):
+			self.urlList.append(submissions.url)
+		return self.urlList
 
 	def getTitle(self):
-		"""Returns a list of titles of the posts given the total posts"""
-		self.returnList = [submission.title for submission in self.posts]
-		return self.returnList
+		for submissions in self.subreddit.top(time_filter = 'day', limit = self.limits):
+			self.titleList.append(submissions.title)
+		return self.titleList
 
 	def getScore(self):
 		"""Returns a lists of integers of scores of the posts."""
-		self.returnList = [submission.score for submission in self.posts]
-		return self.returnList
+		self.scoreList = [submissionsss.score for submissionsss in self.subreddit.top(time_filter = 'day', limit = self.limits)]
+		return self.scoreList
 
 	def getAuthor(self):
 		"""Returns a list of the usernames who submtited the posts."""
-		self.returnList = [submission.author for submission in self.posts]
-		return self.returnList
+		self.authorList = [submission.author for submission in self.subreddit.top(time_filter = 'day', limit = self.limits)]
+		return self.authorList

@@ -20,25 +20,30 @@ class User:
 		name, biography, picture, age, geography, and subreddit is taken
 		from the database.
 		"""
-		json_data=open("dummy_user.json").read()
-		data = json.loads(json_data)
-		if username in data["accounts"]:			
-			self.username = username
-			self.first_name = data["accounts"][username]["first_name"]
-			self.second_name = data["accounts"][username]["second_name"]
-			self.bio = data["accounts"][username]["bio"]
-			self.picture = data["accounts"][username]["picture"]
-			self.age = data["accounts"][username]["age"]
-			self.geography = data["accounts"][username]["geography"]
-			self.subreddit = data["accounts"][username]["subreddit"]
-		else:
-			self.username = "Invalid User"
-			self.first_name = "Invalid User"
-			self.second_name = "Invalid User"
-			self.picture = "Invalid User"
-			self.age = "Invalid User"
-			self.geography = "Invalid User"
-			self.subreddit = "Invalid User"
+		data = Users.query.all()
+		for u in data:
+				if u.username == username:
+					self.username = u.username
+					self.first_name = u.first_name
+					self.second_name = u.second_name
+					self.bio = u.bio
+					self.picture = u.picture
+					self.age = u.age
+					self.education = u.education
+					self.geography = u.geography
+					self.subreddit = u.subreddit
+					self.is_valid_user = True
+					return
+		self.username = "Invalid User"
+		self.first_name = "Invalid User"
+		self.second_name = "Invalid User"
+		self.picture = "Invalid User"
+		self.age = "Invalid User"
+		self.education = "Invalid User"
+		self.geography = "Invalid User"
+		self.subreddit = "Invalid User"
+		self.meme = "Invalid User"
+		self.is_valid_user = False
 
 
 	def __str__(self):
@@ -82,3 +87,21 @@ class User:
 		"""Returns a list representing a list of subreddits that the user
 		is subscribed to."""
 		return self.subreddit
+
+from backend import db
+
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    first_name = db.Column(db.String(120), nullable=False)
+    second_name = db.Column(db.String(120), nullable=False)
+    bio = db.Column(db.String(120), nullable=False)
+    picture = db.Column(db.String(120))
+    age = db.Column(db.Integer, nullable=False)
+    education = db.Column(db.String(120))
+    geography = db.Column(db.String(120))
+    subreddit = db.Column(db.String(200))
+
+    def __repr__(self):
+        return '<User %r>' % self.username

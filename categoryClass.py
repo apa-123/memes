@@ -13,23 +13,21 @@ class Category:
     """
 
     def __init__(self, username):
-        json_data = open("dummy_user.json").read()
-        data = json.loads(json_data)
-        if username in data["categories"]:
-            self.username = username
-            self.picture = data["categories"][username]["picture"]
-            self.subreddit = data["categories"][username]["subreddit"]
-            self.bio = data["categories"][username]["bio"]
-            self.is_valid_cat = True
-        else:
-            self.username = "Invalid Category"
-            self.picture = "Invalid Category"
-            self.subreddit = "Invalid Category"
-            self.bio = "Invalid Category"
-            self.is_valid_cat = ""
-    """ 
-    Overloading of str class is used to return all attributes of a category in a string (like the toString method)
-    """
+        data = Categories.query.all()
+        for u in data:
+            if u.username == username:
+                self.username = u.username
+                self.bio = u.bio
+                self.picture = u.picture
+                self.subreddit = u.subreddit
+                self.is_valid_cat = True
+                return
+        self.username = "Invalid User"
+        self.bio = "Invalid User"
+        self.picture = "Invalid User"
+        self.subreddit = "Invalid User"
+        self.is_valid_cat = False
+
     def __str__(self):
         return "Username = " + self.username + self.first_name + "\nSecond Name = " + self.second_name \
                + "\nPicturelink = " + self.picture + self.bio + "\nSubreddit = " + str(self.subreddit)
@@ -46,4 +44,14 @@ class Category:
     def get_bio(self):
         return "username = " + self.username + "\nBio = " + self.bio
 
+from backend import db
 
+class Categories(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    bio = db.Column(db.String(1200), nullable=False)
+    picture = db.Column(db.String(120))
+    subreddit = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self):
+        return '<Category %r>' % self.username
