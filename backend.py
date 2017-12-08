@@ -148,7 +148,7 @@ def login_page():
 
     return render_template('loginPage.html')
 
-@app.route('/signup')
+@app.route('/login/signup')
 def create_user_page():
     '''
     Renders the create User page.

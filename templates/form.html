@@ -1,3 +1,9 @@
+{% extends 'layout.html' %}
+{% block navbar %}
+{{ super() }}   
+{% endblock  %}
+{% block body %}
+
 <style type="text/css">
 html {
     background-image: url("/static/content/collage.jpg");
@@ -6,50 +12,59 @@ html {
 header {
     top: 120px;
     left: 620px;
-    font-family: Comic Sans MS;
+    font-family: Optima;
     font-size: 3rem;
     position: absolute;
     text-align: center; 
+    color: white; 
 }
 
 h1 {
     top: 200px;
     left: 450px;
-    font-family: Comic Sans MS;
+    font-family: Optima;
     font-size: 1.2rem;
     position: absolute;
     text-align: center;
+    color: white; 
+
 }
 
 input {
   width: 400px;
   padding: 0 20px;
   background-color: #A9D0F5;
+  color: white; 
+
 }
 input,
 input::-webkit-input-placeholder {
     font-size: 20px;
     line-height: 3;
+    color: white; 
+
 }
 
 button {
   background-color: #A9D0F5;
-  font-family: Comic Sans MS;
+  font-family: Optima;
   font-size: 1.3rem;
   font-weight: bolder;
   padding: 10px;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  color: white; 
+
 }
 
 .documentation {
     font-style: italic;
-    color: red;
+    color: white; 
 }
 
 .asterisk {
-    color: red;
+    color: white; 
 }
 
 .information {
@@ -57,14 +72,15 @@ button {
     left: 640px;
     font-size: 1.3rem;
     position: absolute;
+    color: white; 
+
 }
 </style>
 
 <!DOCTYPE html>
-<html>
     <header>Create a New Account</header>
     <h1>Come join our Community! Let's set up your account! Already have one? 
-    <a href="loginPage.html">Sign in here.</a></h1>
+    <a href="/login">Sign in here.</a></h1>
     <div class="information">        
         <input type="text" placeholder="First Name" name="uname" required>       
         <br><br>
@@ -81,4 +97,5 @@ button {
         <p class="documentation">"*" Indicates the required field</p>
         <button type="button">Submit!</button>
     </div>    
-</html>
+
+{% endblock %}
