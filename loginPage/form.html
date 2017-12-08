@@ -1,0 +1,84 @@
+<style type="text/css">
+html {
+    background-color: #CEECF5;
+}
+
+header {
+    top: 120px;
+    left: 620px;
+    font-family: Comic Sans MS;
+    font-size: 3rem;
+    position: absolute;
+    text-align: center; 
+}
+
+h1 {
+    top: 200px;
+    left: 450px;
+    font-family: Comic Sans MS;
+    font-size: 1.2rem;
+    position: absolute;
+    text-align: center;
+}
+
+input {
+  width: 400px;
+  padding: 0 20px;
+  background-color: #A9D0F5;
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 3;
+}
+
+button {
+  background-color: #A9D0F5;
+  font-family: Comic Sans MS;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+.documentation {
+    font-style: italic;
+    color: red;
+}
+
+.asterisk {
+    color: red;
+}
+
+.information {
+    top: 300px;
+    left: 640px;
+    font-size: 1.3rem;
+    position: absolute;
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+    <header>Create a New Account</header>
+    <h1>Come join our Community! Let's set up your account! Already have one? 
+    <a href="loginPage.html">Sign in here.</a></h1>
+    <div class="information">        
+        <input type="text" placeholder="First Name" name="uname" required>       
+        <br><br>
+        <input type="text" placeholder="Last Name" name="uname" required>
+        <br><br>
+        <input type="text" placeholder="*Username" name="uname" required>
+        <br><br>
+        <input type="text" placeholder="*Email" name="uname" required>
+        <br><br>
+        <input type="text" placeholder="*Password" name="uname" required>
+        <br><br>
+        <input type="text" placeholder="*Repeat Password" name="uname" required>
+        <br><br> 
+        <p class="documentation">"*" Indicates the required field</p>
+        <button type="button">Submit!</button>
+    </div>    
+</html>
