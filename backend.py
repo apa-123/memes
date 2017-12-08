@@ -6,8 +6,6 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from reddit import Reddit
 from memecl import Memes
-from userClass import User
-from userClass import PublicUser
 from categoryClass import Category
 
 '''
@@ -145,3 +143,6 @@ def category_page():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+from userClass import User
+from userClass import PublicUser
