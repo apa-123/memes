@@ -46,7 +46,6 @@ class User:
 		self.is_valid_user = False
 
 
-
 	def __str__(self):
 		"""Prints out all the information about the user."""
 		return "Username = " + self.username + "\nFirst Name = " \

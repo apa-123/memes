@@ -36,6 +36,7 @@ class Reddit:
 		self.authorList = []
 		self.scoreList = []
 
+
 	def getSubredditName(self):
 		"""	Return the name of the Subreddit."""
 		return self.nameOfSubreddit

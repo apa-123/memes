@@ -16,7 +16,7 @@ http://flask.pocoo.org/
 
 '''
 
-app = Flask(__name__)
+app = Flask('Memes')
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -25,12 +25,15 @@ db = SQLAlchemy(app)
 
 
 # Number of posts to render
-NUM_POSTS = 3
+
 def createUser(username, password, first_name, second_name, bio, picture, age, education, geography, subreddit):
     user = Users(username = username, password = password, first_name = first_name, second_name = second_name, 
         bio = bio, picture = picture, age = age, education = education, geography = geography, subreddit = subreddit)
     db.session.add(user)
     db.session.commit()
+
+NUM_POSTS = 5
+
 def init_category(name):
     '''
     Creates a new category object which points to the category with
@@ -41,7 +44,7 @@ def init_category(name):
     '''
     return Category(name)
 
-def init_public_user(name):
+def init_user(name):
     '''
     Creates a new public user object which points to the user with
     the specified name.
@@ -49,7 +52,7 @@ def init_public_user(name):
     @param: the name of the user
     @return: PublicUser object pointing to a given user 
     '''
-    return PublicUser(name)
+    return User(name)
 
 def get_category(category):
     '''
@@ -70,7 +73,7 @@ def get_category(category):
 
     return [img_urls, titles, scores, authors]
 
-def get_public_user(user):
+def get_user(user):
     '''
     Gets the information from the specified public user object.
 
@@ -99,6 +102,13 @@ def index():
 
 # user home page
 @app.route('/users')
+
+def user():
+	name = request.args.get('user')
+	user = initUser(name)
+	[urls, titles, scores, authors] = getUser(user)
+	return render_template('category_page.html',name=name, img_1_url=urls[0], img_2_url=urls[1], img_3_url=urls[2], source_img="content/reddit_logo.png")
+
 def public_user_page():
     '''
     Renders the user page.
@@ -110,14 +120,15 @@ def public_user_page():
     name = request.args.get('user')
 
     # Initializes the PublicUser object
-    user = init_public_user(name)
+    user = init_user(name)
     
     # Gets the data from the API
-    [img_urls, titles, scores, authors] = get_public_user(user)
+    [img_urls, titles, scores, authors] = get_user(user)
 
     return render_template('category_page.html', name=name,
     img_1_url=img_urls[0], img_2_url=img_urls[1], img_3_url=img_urls[2],
     source_img="content/reddit_logo.png")
+
 
 @app.route('/category')
 def category_page():
@@ -135,10 +146,30 @@ def category_page():
     
     # Gets the data from the API
     [img_urls, titles, scores, authors] = get_category(category)
-    
-    return render_template('category_page.html', name=name,
-    img_1_url=img_urls[0], img_2_url=img_urls[1], img_3_url=img_urls[2],
-    source_img="content/reddit_logo.png")
+
+    return render_template('category_page.html', numPost=range(NUM_POSTS), name=name, 
+        img_urls=img_urls, titles=titles, scores=scores, authors=authors,
+        source_img="static/content/reddit_logo.png")
+
+@app.route('/login')
+def login_page():
+    '''
+    Renders the login page.
+
+    @return: html of login page
+    '''
+
+    return render_template('loginPage.html')
+
+@app.route('/login/signup')
+def create_user_page():
+    '''
+    Renders the create User page.
+
+    @return: html of create user page
+    '''
+
+    return render_template('form.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
