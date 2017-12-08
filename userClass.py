@@ -22,7 +22,6 @@ class User:
 		"""
 		data = Users.query.all()
 		for u in data:
-			print(u.username)
 			if u.username == username:
 				self.username = u.username
 				self.first_name = u.first_name
