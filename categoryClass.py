@@ -21,14 +21,12 @@ class Category:
             self.subreddit = data["categories"][username]["subreddit"]
             self.bio = data["categories"][username]["bio"]
             self.is_valid_cat = True
-
         else:
             self.username = "Invalid Category"
             self.picture = "Invalid Category"
             self.subreddit = "Invalid Category"
             self.bio = "Invalid Category"
-            self.is_valid_cat = ''
-
+            self.is_valid_cat = ""
     """ 
     Overloading of str class is used to return all attributes of a category in a string (like the toString method)
     """

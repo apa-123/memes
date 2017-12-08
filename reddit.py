@@ -63,4 +63,3 @@ class Reddit:
 		"""Returns a list of the usernames who submtited the posts."""
 		self.returnList = [submission.author for submission in self.posts]
 		return self.returnList
-

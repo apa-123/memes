@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block navbar %}
+{{ super() }}   
+{% endblock  %}
+{% block body %}
+
+<div class="jumbotron">
+<!--     <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+    </div> -->
+
+
+      <!-- <div class="bg-faded p-4 my-4"> -->
+        <form class="form-login" name='login' action = "POST">
+
+            <div class="login">
+                
+                <div class = "the-form p-4 my-4">
+                
+                    <div class = "log-in-title">
+                        <h1> LOG IN </h1>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Password</span>
+                            <input type="password" name="password" required>
+                        </label>
+                    </div>
+                    
+<!--                     <div class="form-row">
+                        <label class="checkbox">
+                        <input type="checkbox" name = "checkbox"> 
+                        <span>Remember me</span>
+                        </label>
+                    </div> -->
+                    
+                    <div class="form-row">
+                        <button type="submit">Log in</button>
+                    </div>
+                
+                </div>
+                        <a href="/signup" class="create-an-account" style="color: white; font-size: 1.2em;">Do not have an account? Create one</a>
+            </div>
+        </form>
+</div>
+
+{% endblock %}
