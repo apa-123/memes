@@ -80,6 +80,19 @@ body {
     align-content: center;
 }
 
+.nav.navbar-nav li a {
+    color: white;
+    background-color: rgb(44, 83, 85);  
+    font-family: "Optima";  
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: rgb(44, 83, 85);
+    border: 3px solid rgb(255, 255, 255);    
+}
+
+.dropdown-menu{background:rgba(5, 5, 5, 0.5); color:white; }
+
 .login {
     width: 30%;
     height: 70%;
