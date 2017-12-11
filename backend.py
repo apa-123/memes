@@ -1,8 +1,5 @@
 import os
-from flask import Flask
-from flask import url_for
-from flask import render_template
-from flask import request
+from flask import Flask, url_for, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from reddit import Reddit
 from memecl import Memes
@@ -177,7 +174,6 @@ def login_page():
     '''
 
     return render_template('loginPage.html')
-
 @app.route('/login/signup', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
@@ -185,12 +181,16 @@ def register():
     if request.method == 'POST':
         first = request.form['fname']
         last = request.form['lname']
-        username = request.form['username']
+        usernamess = request.form['username']
+        usernames = db.session.query(Users.username)
+        for x in usernames:
+            if(usernamess in x):
+                return render_template('form.html')
         email = request.form['email']
         password = request.form['password']
         password2 = request.form['password2']
-        createUser(username,password,first,last)
-        # flash('Thanks for registering!')
+        createUser(usernamess,password,first,last)
+        # flash("No bueno")
         return render_template('index.html')
 
 if __name__ == '__main__':
