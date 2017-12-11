@@ -6,9 +6,10 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from reddit import Reddit
 from memecl import Memes
-
+from registration_form import *
 '''
-This class uses the User, PublicUser, Meme and Category classes 
+This class uses the User, 
+, Meme and Category classes 
 to render the user and category pages.
 
 This is done using a Flask app. Read more about Flask here:
@@ -23,12 +24,29 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
 db = SQLAlchemy(app)
 
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    first_name = db.Column(db.String(120), nullable=False)
+    second_name = db.Column(db.String(120), nullable=False)
+    '''bio = db.Column(db.String(120), nullable=True)
+    picture = db.Column(db.String(120), nullable=True)
+    age = db.Column(db.Integer, nullable=True)
+    education = db.Column(db.String(120), nullable=True)
+    geography = db.Column(db.String(120), nullable=True)
+    subreddit = db.Column(db.String(200), nullable=True)
+    '''
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+user = Users()
 
 # Number of posts to render
 
-def createUser(username, password, first_name, second_name, bio, picture, age, education, geography, subreddit):
-    user = Users(username = username, password = password, first_name = first_name, second_name = second_name, 
-        bio = bio, picture = picture, age = age, education = education, geography = geography, subreddit = subreddit)
+def createUser(username, password, first_name, second_name):
+    ''', bio= None, picture= None, age=None, education=None, geography=None, subreddit=None):'''
+    user = Users(username = username, password = password, first_name = first_name, second_name = second_name)
     db.session.add(user)
     db.session.commit()
 
@@ -161,15 +179,20 @@ def login_page():
 
     return render_template('loginPage.html')
 
-@app.route('/login/signup')
-def create_user_page():
-    '''
-    Renders the create User page.
-
-    @return: html of create user page
-    '''
-
-    return render_template('form.html')
+@app.route('/login/signup', methods=['GET', 'POST'])
+def register():
+    if request.method == 'GET':
+        return render_template('form.html')
+    if request.method == 'POST':
+        first = request.form['fname']
+        last = request.form['lname']
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        password2 = request.form['password2']
+        createUser(username,password,first,last)
+        # flash('Thanks for registering!')
+        return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -82,20 +82,22 @@ button {
     <h1>Come join our Community! Let's set up your account! Already have one? 
     <a href="/login">Sign in here.</a></h1>
     <div class="information">        
-        <input type="text" placeholder="First Name" name="uname" required>       
+      <form action="/login/signup" method="POST">
+        <input type="text" placeholder="First Name" name="fname" required>       
         <br><br>
-        <input type="text" placeholder="Last Name" name="uname" required>
+        <input type="text" placeholder="Last Name" name="lname" required>
         <br><br>
-        <input type="text" placeholder="*Username" name="uname" required>
+        <input type="text" placeholder="*Username" name="username" required>
         <br><br>
-        <input type="text" placeholder="*Email" name="uname" required>
+        <input type="text" placeholder="*Email" name="email" required>
         <br><br>
-        <input type="text" placeholder="*Password" name="uname" required>
+        <input type="text" placeholder="*Password" name="password" required>
         <br><br>
-        <input type="text" placeholder="*Repeat Password" name="uname" required>
+        <input type="text" placeholder="*Repeat Password" name="password2" required>
         <br><br> 
         <p class="documentation">"*" Indicates the required field</p>
-        <button type="button">Submit!</button>
+        <input class="btn btn-default" type="submit" value="submit">
+      </form>
     </div>    
 
 {% endblock %}
