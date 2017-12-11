@@ -1,14 +1,12 @@
 import os
-from flask import Flask
-from flask import url_for
-from flask import render_template
-from flask import request
+from flask import Flask, url_for, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from reddit import Reddit
 from memecl import Memes
-
+from registration_form import *
 '''
-This class uses the User, PublicUser, Meme and Category classes 
+This class uses the User, 
+, Meme and Category classes 
 to render the user and category pages.
 
 This is done using a Flask app. Read more about Flask here:
@@ -23,12 +21,28 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
 db = SQLAlchemy(app)
 
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    first_name = db.Column(db.String(120), nullable=False)
+    second_name = db.Column(db.String(120), nullable=False)
+    bio = db.Column(db.String(120))
+    picture = db.Column(db.String(120))
+    age = db.Column(db.Integer)
+    education = db.Column(db.String(120))
+    geography = db.Column(db.String(120))
+    subreddit = db.Column(db.String(200))
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+db.create_all()
+db.session.commit()
 
 # Number of posts to render
 
-def createUser(username, password, first_name, second_name, bio, picture, age, education, geography, subreddit):
-    user = Users(username = username, password = password, first_name = first_name, second_name = second_name, 
-        bio = bio, picture = picture, age = age, education = education, geography = geography, subreddit = subreddit)
+def createUser(username, password, first_name, second_name):
+    user = Users(username = username, password = password, first_name = first_name, second_name = second_name, bio = None, picture = None, age = None, education = None, geography = None, subreddit = None)
     db.session.add(user)
     db.session.commit()
 
@@ -160,16 +174,24 @@ def login_page():
     '''
 
     return render_template('loginPage.html')
-
-@app.route('/login/signup')
-def create_user_page():
-    '''
-    Renders the create User page.
-
-    @return: html of create user page
-    '''
-
-    return render_template('form.html')
+@app.route('/login/signup', methods=['GET', 'POST'])
+def register():
+    if request.method == 'GET':
+        return render_template('form.html')
+    if request.method == 'POST':
+        first = request.form['fname']
+        last = request.form['lname']
+        usernamess = request.form['username']
+        usernames = db.session.query(Users.username)
+        for x in usernames:
+            if(usernamess in x):
+                return render_template('form.html')
+        email = request.form['email']
+        password = request.form['password']
+        password2 = request.form['password2']
+        createUser(usernamess,password,first,last)
+        # flash("No bueno")
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
