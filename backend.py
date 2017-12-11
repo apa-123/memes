@@ -119,8 +119,8 @@ def index():
 
 def user():
 	name = request.args.get('user')
-	user = initUser(name)
-	[urls, titles, scores, authors] = getUser(user)
+	user = User(name)
+	[urls, titles, scores, authors] = get_user(user)
 	return render_template('category_page.html',name=name, img_1_url=urls[0], img_2_url=urls[1], img_3_url=urls[2], source_img="content/reddit_logo.png")
 
 def public_user_page():
