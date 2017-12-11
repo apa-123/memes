@@ -168,10 +168,10 @@ def register():
         first = request.form['fname']
         last = request.form['lname']
         usernamess = request.form['username']
-        #usernames = db.session.query(Users.username)
-        #for x in usernames:
-        #    if(usernamess in x):
-        #        return render_template('form.html')
+        usernames = db.session.query(Users.username)
+        for x in usernames:
+            if(usernamess in x):
+                return render_template('form.html')
         email = request.form['email']
         password = request.form['password']
         password2 = request.form['password2']
