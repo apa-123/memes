@@ -30,23 +30,22 @@ class Users(db.Model):
     password = db.Column(db.String(120), nullable=False)
     first_name = db.Column(db.String(120), nullable=False)
     second_name = db.Column(db.String(120), nullable=False)
-    '''bio = db.Column(db.String(120), nullable=True)
-    picture = db.Column(db.String(120), nullable=True)
-    age = db.Column(db.Integer, nullable=True)
-    education = db.Column(db.String(120), nullable=True)
-    geography = db.Column(db.String(120), nullable=True)
-    subreddit = db.Column(db.String(200), nullable=True)
-    '''
+    bio = db.Column(db.String(120))
+    picture = db.Column(db.String(120))
+    age = db.Column(db.Integer)
+    education = db.Column(db.String(120))
+    geography = db.Column(db.String(120))
+    subreddit = db.Column(db.String(200))
 
     def __repr__(self):
         return '<User %r>' % self.username
-user = Users()
+db.create_all()
+db.session.commit()
 
 # Number of posts to render
 
 def createUser(username, password, first_name, second_name):
-    ''', bio= None, picture= None, age=None, education=None, geography=None, subreddit=None):'''
-    user = Users(username = username, password = password, first_name = first_name, second_name = second_name)
+    user = Users(username = username, password = password, first_name = first_name, second_name = second_name, bio = None, picture = None, age = None, education = None, geography = None, subreddit = None)
     db.session.add(user)
     db.session.commit()
 
@@ -192,7 +191,7 @@ def register():
         password2 = request.form['password2']
         createUser(username,password,first,last)
         # flash('Thanks for registering!')
-        return redirect('/')
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
