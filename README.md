@@ -1,4 +1,7 @@
-# memes
+# memes 
+##
+Group Members - Aparajitha Adiraju, Bryan Cheng, Aditya Bhansali, Rena Xu, Thomas Yang
+
 ## What is it:
 A social media web application where users can create personalized profiles to post and follow memes.
 
