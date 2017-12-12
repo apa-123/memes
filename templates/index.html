@@ -5,48 +5,26 @@
 {% endblock  %}
 {% block body %}
 
+  <style>
+    .navbar {
+      display:none;
+    }
+  </style>
 
-<div class="jumbotron">
-  <div class="container">
-    <h1>Welcome to Memebook!</h1>
-    <p> ~where you can find all the memes to your heart's content~</p>
-  </div>
-</div>
-<div class = "postButton">
-  <div class="container">
-   <h2>
-      <a class="btn btn-primary btn-lg">New Post</a>
-   </h2>
- </div>
-</div>
-
-
-<!--
-<h1>Memes</h1>
-<p> The place to see what your friends favorite memes are </p>
-<p><img src="http://epos-uni-paris-saclay.fr/artefact/file/download.php?file=6000&view=2134&embedded=1&description=2134&text=8915" alt="What is a meme?"></p>
-
-<p> Login here to view your account </p>
-<form action="/action_page.php">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Dummy" class="dummy">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>memebook</h1>
+      <p> ~where you can find all the memes to your heart's content~</p>
+    </div>
   </div>
 
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
-    <input type="checkbox" checked="checked"> Remember me
+  <div class = "loginButton">
+    <a href="/login">login</a>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class = "signUp">
+    <a href="/login/signup">sign up</a>
   </div>
-</form>
--->
+  
+
 {% endblock %}
