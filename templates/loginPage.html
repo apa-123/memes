@@ -31,25 +31,16 @@
         <label><b>Username</b></label>
         <br>
         <input type="text" placeholder="Enter Username" name="uname" required>
+        <label><b>Password</b></label>
+        <span class="password">Forgot <a href="#">password?</a></span>
+        <br>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        <label><b>Remember Me</b></label>
+        <input type="checkbox" checked="checked">
+        <br><br>
+        <input class="btn btn-default" type="submit" value="submit">
       </form>
     </div>
-
-    <div class="password">
-        <form action="/login" method="POST">
-          <label><b>Password</b></label>
-          <span class="password">Forgot <a href="#">password?</a></span>
-          <br>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-        </form>
-    </div>
-
-    <div class="container">
-      Remember me
-      <input type="checkbox" checked="checked">
-      <br><br>
-      <input class="btn btn-default" type="submit" value="submit">
-    </div>
-
     <div class="signUp">
       <label><b>New User?</b></label>
       <a href="/login/signup"><div id="both"><button type="button">Sign Up!</button></a></div>
