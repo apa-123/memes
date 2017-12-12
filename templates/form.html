@@ -127,13 +127,13 @@ p {
   	{% endif %}    	
 
   <div class="login">
-      <form method="post">
-        <input type="firstname" name="firstName" placeholder="First Name" required="required" class="input-txt" />
-        <input type="lastname" name="lastname" placeholder="Last Name" required="required" class="input-txt" />
-        <input type="username" name="user" placeholder="*Username" required="required" class="input-txt" />
+      <form action="/login/signup" method="POST">
+        <input type="firstname" name="fname" placeholder="First Name" required="required" class="input-txt" />
+        <input type="lastname" name="lname" placeholder="Last Name" required="required" class="input-txt" />
+        <input type="username" name="username" placeholder="*Username" required="required" class="input-txt" />
         <input type="email" name="email" placeholder="*Email" required="required" class="input-txt" />
         <input type="password" name="password" placeholder="*Password" required="required" class="input-txt" />
-        <input type="repeat" name="repeat" placeholder="*Repeat Password" required="required" class="input-txt" />
+        <input type="repeat" name="password2" placeholder="*Repeat Password" required="required" class="input-txt" />
 		  <div class="login-footer">
 		  	<p>"*" Indicates required field</p>
 		    <button type="submit" class="btn btn--right">Submit  </button>
