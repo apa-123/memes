@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block navbar %} {{ super() }} {% endblock %} {% block body %}
+
+<div class="profile-info">
+	<div class="center">
+		<div class="profile-header">
+   			<h2>Profile</h2>
+    		<h3>This is {{ session['username'] }}'s profile page</h3>
+    		<h3>First Name: {{ session['first'] }}</h3>
+    		<h3>Last Name: {{ session['second'] }}</h3>
+    		<h3>Email: {{ session['email'] }}</h3>
+
+
+    	</div>
+    	<div class="user-settings">
+    		
+    	</div>
+</div>
+
+</div>
+
+
+{% endblock %}
