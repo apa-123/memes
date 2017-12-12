@@ -7,7 +7,10 @@
     <header>Create a New Account</header>
     <h1>Come join our Community! Let's set up your account! Already have one? 
     <a href="/login">Sign in here.</a></h1>
-    <div class="information">        
+    <div class="information"> 
+      {% if error %}
+      <p><strong>Error:</strong> {{ error }}
+      {% endif %}       
       <form action="/login/signup" method="POST">
         <input type="text" placeholder="First Name" name="fname" required>       
         <br><br>
