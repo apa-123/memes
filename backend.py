@@ -249,9 +249,9 @@ def register():
         password = request.form['password']
         password2 = request.form['password2']
 
-        createUser(usernamess,password,first,last)
+        createUser(username,password,first,last)
 
-        session['username'] = usernamess
+        session['username'] = username
         session['first'] = first
         session['second'] = last
         session['email'] = email
