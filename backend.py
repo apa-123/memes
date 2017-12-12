@@ -153,11 +153,16 @@ def category_page():
 
 @app.route('/login')
 def login_page():
-    '''
-    Renders the login page.
-
-    @return: html of login page
-    '''
+    if request.method == 'GET':
+        return render_template('form.html')
+    if request.method == 'POST':
+        username = request.form('uname')
+        psw = request.form('psw')
+        if Users.query.filter(Users.username==username).all() != []:
+            if(Users.query.filter(Users.username==username).all()[0].password == psw):
+                return render_template('index.html')
+            else:
+                return render_template('login.html')
 
     return render_template('loginPage.html')
 @app.route('/login/signup', methods=['GET', 'POST'])
