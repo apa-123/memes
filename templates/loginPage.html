@@ -1,55 +1,129 @@
-{% extends 'layout.html' %}
-{% block navbar %}
-{{ super() }}   
-{% endblock  %}
-{% block body %}
+
 
 <style type="text/css">
+body {
+    background-image: url("/static/content/collage.jpg");
+
+}
+
+.container {
+  top: 280px;
+  left: 38%;
+  text-align: center;
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.login {
+  margin-top: 50px;
+  width: 450px;
+}
+
+.login-heading {
+  font: 1.8em/48px "Tenor Sans", sans-serif;
+  color: white;
+}
+
+.input-txt {
+  width: 100%;
+  padding: 20px 10px;
+  opacity: 0.8;
+  border: none;
+  font-size: 1em;
+  color: white;
+  border-bottom: 1px dotted rgba(250, 250, 250, 0.4);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.input-txt:-moz-placeholder {
+  color: #81aac9;
+}
+
+.input-txt:-ms-input-placeholder {
+  color: #81aac9;
+}
+
+.input-txt::-webkit-input-placeholder {
+  color: #81aac9;
+}
+
+.input-txt:focus {
+  background-color: #4478a0;
+}
+
+.login-footer {
+  margin: 10px 0;
+  overlow: hidden;
+  float: left;
+  width: 100%;
+}
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  background: white;
+  opacity: 0.8;
+  color: #5D92BA;
+}
+
+.btn--right {
+  float: right;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.icon--min {
+  font-size: .9em;
+}
+
+.lnk {
+  font-size: .8em;
+  line-height: 3em;
+  color: white;
+  text-decoration: none;
+}
+
+.signUp {
+  top: 650px;
+  left: 450px;
+  position: absolute;
+  color: white;
+}
 </style>
 
-<!-- Button to open the modal login form -->
-<!-- <button onclick="document.getElementById('id01').style.display='block'">Login</button> -->
-
-<!-- The Modal -->
 <!DOCTYPE html>
   <head>
-    <meta charset="utf-8">
-    <title>MyFlaskApp</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>Simple login form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
   </head>
-  <body id="loginForm">
-    <header>LOGIN</header>
-    <div class="explanation">
-      <p>Identify yourself with this website. All request to log into this website are logged.
-      <br>Repeated failed login attempts will result in lock out.
-      </p>
-    </div>
 
-    <div class="username">
-      <label><b>Username</b></label>
-      <br>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-    </div>
-
-    <div class="password">
-      <label><b>Password</b></label>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="password">Forgot <a href="#">password?</a></span>
-      <br>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-    </div>
-
+  <body>
     <div class="container">
-      Remember me
-      <input type="checkbox" checked="checked">
-      <br><br>
-      <div id="both"><button type="submit">Login</button></div>         
-    </div>
-
-    <div class="signUp">
-      <label><b>New User?</b></label>
-      <a href="/login/signup"><div id="both"><button type="button">Sign Up!</button></a></div>
+      <div class="login">
+      	<h1 class="login-heading">
+          <strong>Welcome.</strong> Please login.</h1>
+          <form method="post">
+            <input type="text" name="user" placeholder="Username" required="required" class="input-txt" />
+              <input type="password" name="password" placeholder="Password" required="required" class="input-txt" />
+              <div class="login-footer">
+                 <a href="#" class="lnk">
+                  <span class="icon icon--min">ಠ╭╮ಠ</span> 
+                  I've forgotten something
+                </a>
+                <button type="submit" class="btn btn--right">Sign in  </button>
+        
+              </div>
+          </form>
+      </div>
     </div>
   </body>
 
-{% endblock %}
