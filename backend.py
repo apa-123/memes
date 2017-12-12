@@ -203,8 +203,8 @@ def login_page():
         return render_template('loginPage.html')
 
     if request.method == 'POST':
-        username = request.form['uname']
-        psw = request.form['psw']
+        username = request.form['user']
+        psw = request.form['password']
         error = None
         #Check to see if the username is in the database.
         if Users.query.filter(Users.username==username).all() != []:
