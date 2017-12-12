@@ -249,6 +249,9 @@ def register():
         password = request.form['password']
         password2 = request.form['password2']
 
+        if (password != password2):
+            return render_template('form.html', error = 'Passwords do not match')
+
         createUser(username,password,first,last)
 
         session['username'] = username
