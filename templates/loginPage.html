@@ -27,16 +27,20 @@
     </div>
 
     <div class="username">
-      <label><b>Username</b></label>
-      <br>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <form action="/login" method="POST">
+        <label><b>Username</b></label>
+        <br>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+      </form>
     </div>
 
     <div class="password">
-      <label><b>Password</b></label>
-      &nbsp;&nbsp;&nbsp;&nbsp;<span class="password">Forgot <a href="#">password?</a></span>
-      <br>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+        <form action="/login" method="POST">
+          <label><b>Password</b></label>
+          <span class="password">Forgot <a href="#">password?</a></span>
+          <br>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+        </form>
     </div>
 
     <div class="container">
