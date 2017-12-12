@@ -58,7 +58,7 @@ def get_category(category):
     '''
     
     # initializes the reddit praw wrapper
-    reddit = Reddit(category.subreddit[0], NUM_POSTS)
+    reddit = Reddit(category.subreddit, NUM_POSTS)
 
     # gets the data from reddit
     img_urls = reddit.getImageUrl()
