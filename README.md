@@ -1,4 +1,18 @@
 # memes
+## What is it:
+A social media web application where users can create personalized profiles to post and follow memes.
+
+## Technologies used:
+- SQLAlchemy Database used for the backend
+- Python Flask used to connect backend and frontend
+- HTML/CSS/Bootstrap used to code the user interface 
+- Reddit API used to obtain the memes
+
+## Future improvements:
+- Deploy to AWS so it is not on a local host
+- Add more user functionality (the ability to follow other users and post)
+- Improve the UI to make it easier to navigate 
+
 ## Flask Information:
 
 What is Flask? Webdev framework to manage HTML/CSS -- work with databases
