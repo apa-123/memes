@@ -1,5 +1,5 @@
 import os
-from flask import Flask, url_for, render_template, request, flash
+from flask import Flask, url_for, render_template, request, flash, redirect, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from reddit import Reddit
 from memecl import Memes
@@ -110,13 +110,40 @@ def index():
     return render_template('index.html')
 
 # user home page
-@app.route('/users')
+# @app.route('/users')
 
+# def user():
+# 	name = request.args.get('user')
+# 	user = User(name)
+# 	[urls, titles, scores, authors] = get_user(user)
+# 	return render_template('category_page.html',name=name, img_1_url=urls[0], img_2_url=urls[1], img_3_url=urls[2], source_img="content/reddit_logo.png")
+
+# user profile
+@app.route('/profile')
 def user():
-	name = request.args.get('user')
-	user = User(name)
-	[urls, titles, scores, authors] = get_user(user)
-	return render_template('category_page.html',name=name, img_1_url=urls[0], img_2_url=urls[1], img_3_url=urls[2], source_img="content/reddit_logo.png")
+    if 'username' not in session:
+        return redirect(url_for('login_page'))
+
+    return redirect(url_for('profile', username=session['username']))
+
+@app.route('/users/<username>')
+def profile(username):
+    return render_template('profile.html')
+
+@app.route('/users/123/user_edit_name', methods=['GET','POST'])
+def user_edit_name():
+
+    return
+
+@app.route('/signout')
+def signout():
+ 
+  if 'username' not in session:
+    return redirect(url_for('login_page'))
+     
+  session.pop('username', None)
+  session.pop('first', None)
+  return redirect(url_for('index'))
 
 def public_user_page():
     '''
@@ -221,8 +248,18 @@ def register():
         email = request.form['email']
         password = request.form['password']
         password2 = request.form['password2']
-        createUser(username,password,first,last)
+
+        createUser(usernamess,password,first,last)
+
+        session['username'] = usernamess
+        session['first'] = first
+        session['second'] = last
+        session['email'] = email
         return render_template('index.html')
 
 if __name__ == '__main__':
+    app.secret_key = 'blah'
     app.run(debug=True)
+
+from userClass import *
+from categoryClass import *
