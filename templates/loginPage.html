@@ -25,8 +25,10 @@
       <br>Repeated failed login attempts will result in lock out.
       </p>
     </div>
-
     <div class="username">
+      {% if error %}
+      <p><strong>Error:</strong> {{ error }}
+      {% endif %}
       <form action="/login" method="POST">
         <label><b>Username</b></label>
         <br>
