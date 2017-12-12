@@ -151,7 +151,7 @@ def category_page():
         img_urls=img_urls, titles=titles, scores=scores, authors=authors,
         source_img="static/content/reddit_logo.png")
 
-@app.route('/login')
+@app.route('/login', methods=['GET','POSTS'])
 def login_page():
     if request.method == 'GET':
         return render_template('form.html')
