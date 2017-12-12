@@ -15,6 +15,7 @@ A social media web application where users can create personalized profiles to p
 - Deploy to AWS so it is not on a local host
 - Add more user functionality (the ability to follow other users and post)
 - Improve the UI to make it easier to navigate 
+- Complete the Unittests
 
 ## Flask Information:
 
