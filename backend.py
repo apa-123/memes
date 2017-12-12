@@ -147,6 +147,7 @@ def signout():
     return redirect(url_for('login_page'))
      
   session.pop('username', None)
+  session.pop('first', None)
   return redirect(url_for('index'))
 
 def public_user_page():
@@ -218,6 +219,9 @@ def register():
         createUser(usernamess,password,first,last)
 
         session['username'] = usernamess
+        session['first'] = first
+        session['second'] = last
+        session['email'] = email
         flash("No bueno")
         return render_template('index.html')
 
