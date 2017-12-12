@@ -13,7 +13,7 @@ A social media web application where users can create personalized profiles to p
 
 ## Future improvements:
 - Deploy to AWS so it is not on a local host
-- Add more user functionality (the ability to follow other users and post)
+- Add more user functionality (the ability to follow other users and post, pictures of users, upvotes/downvotes)
 - Improve the UI to make it easier to navigate 
 - Complete the Unittests
 
