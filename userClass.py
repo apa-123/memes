@@ -91,6 +91,20 @@ class User:
 from backend import db
 
 class Users(db.Model):
+	'''A Users database.
+
+	Attributes:
+	username: A string representing the username
+	first_name: A string representing the first name of the user
+	second_name: A string representing the last name of the user
+	bio: A string representing the biography of the user
+	picture: A string representing a link to the picture of the user's profile pic
+	age: A int representing the age of the user
+	geography: A string representing the location of the user
+	subreddit: A list representing the subreddits that the user is subscribed to
+	'''
+
+
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
@@ -104,4 +118,5 @@ class Users(db.Model):
     subreddit = db.Column(db.String(200))
 
     def __repr__(self):
+    	'''Print the Python Object Name'''
         return '<User %r>' % self.username
