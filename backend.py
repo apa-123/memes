@@ -211,7 +211,7 @@ def login_page():
 
             #Checks if password entered matches the password the user entered.
             if(Users.query.filter(Users.username==username).all()[0].password == psw):
-                return render_template('index.html')
+                return render_template('profile.html')
             else:
                 return render_template('loginPage.html', error =  'Invalid Password')
         else:
