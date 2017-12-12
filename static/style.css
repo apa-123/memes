@@ -81,10 +81,32 @@ body {
 
 }
 
+.center {
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%
+}
+
+.profile-header {
+  text-align: center;
+}
+
 .rows {
     margin-right: auto;
     margin-left: auto;
 }
+
+.profile-info {
+    margin-right: auto;
+    margin-left: auto;
+    border: 3px solid grey;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+    margin-bottom: 20px;
+}
+
+
 .posts {
     margin-right: auto;
     margin-left: auto;
