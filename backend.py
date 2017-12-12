@@ -156,8 +156,8 @@ def login_page():
     if request.method == 'GET':
         return render_template('loginPage.html')
     if request.method == 'POST':
-        username = request.form('uname')
-        psw = request.form('psw')
+        username = request.form['uname']
+        psw = request.form['psw']
         if Users.query.filter(Users.username==username).all() != []:
             if(Users.query.filter(Users.username==username).all()[0].password == psw):
                 return render_template('index.html')
