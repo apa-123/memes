@@ -118,19 +118,22 @@ body {
   </head>
 
 
-    <div class="container">
+  <div class="container">
       <div class="login">
       	<h1 class="login-heading">
           <strong>Welcome.</strong> Please login.</h1>
-          <form method="post">
-            <input type="text" name="user" placeholder="Username" required="required" class="input-txt" />
-              <input type="password" name="password" placeholder="Password" required="required" class="input-txt" />
+                {% if error %}
+      <p><strong>Error:</strong> {{ error }}
+      {% endif %}  
+      <form action="/login" method="POST">
+            <input type="text" name="uname" placeholder="Username" required="required" class="input-txt" />
+              <input type="text" name="psw" placeholder="Password" required="required" class="input-txt" />
               <div class="login-footer">
                  <a href="#" class="lnk">
                   <span class="icon icon--min">ಠ╭╮ಠ</span> 
                   I've forgotten something
                 </a>
-                <button type="submit" class="btn btn--right">Sign in  </button>        
+        <input class="btn btn-default" type="submit" value="submit">
               </div>    
               <div class="login-signUp">                      
                 <label><b>New User?</b></label>
