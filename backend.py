@@ -27,7 +27,7 @@ from categoryClass import *
 
 # Number of posts to render
 
-NUM_POSTS = 5
+NUM_POSTS = 100
 
 def init_category(name):
     '''
