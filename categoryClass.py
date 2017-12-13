@@ -47,6 +47,16 @@ class Category:
 from backend import db
 
 class Categories(db.Model):
+
+    '''A Categories database.
+
+	Attributes:
+	username: A string representing the category
+	bio: A string representing the biography of the Category
+	picture: A string representing a link to the picture of the category pic
+	subreddit: A list representing the subreddits 
+	'''
+
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     bio = db.Column(db.String(1200), nullable=False)
