@@ -66,10 +66,11 @@ body {
 }
 
 
-.post .user-info .author {
+.author {
     float: left;
     vertical-align: middle;
     text-align: center;
+    color:white;
 }
 
 .posts .main-img img {
