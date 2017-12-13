@@ -48,6 +48,7 @@ body {
 .posts {
     margin-right: auto;
     margin-left: auto;
+    background-color:#333333;
     border: 3px solid grey;
     border-collapse: separate;
     border-spacing: 10px 50px;
@@ -93,9 +94,6 @@ body {
     border: 3px solid rgb(255, 255, 255);
     font-family: Helvetica Neue;
     padding-bottom: 5%;
-    position: absolute;
-    top: 25%;
-
 
 }
 
@@ -150,7 +148,7 @@ body {
     align-content: center;
 }
 .navbar {
-    background-color: transparent;
+    background-colo r: transparent;
     border-width: 0px;;    
 }
 .nav.navbar-nav li a {
