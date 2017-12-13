@@ -127,6 +127,9 @@ a {
 
 <body>
   <div class="container">
+      {% if error %}
+      <p><strong>Error:</strong> {{ error }}
+      {% endif %} 
   <div class="login">
     <h1 class="login-heading"><strong>Welcome.</strong> Please login.</h1>
       <form method="post">

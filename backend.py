@@ -58,7 +58,7 @@ def get_category(category):
     '''
     
     # initializes the reddit praw wrapper
-    reddit = Reddit(category.subreddit[0], NUM_POSTS)
+    reddit = Reddit(category.subreddit, NUM_POSTS)
 
     # gets the data from reddit
     img_urls = reddit.getImageUrl()
@@ -203,8 +203,8 @@ def login_page():
         return render_template('loginPage.html')
 
     if request.method == 'POST':
-        username = request.form['uname']
-        psw = request.form['psw']
+        username = request.form['user']
+        psw = request.form['password']
         error = None
         #Check to see if the username is in the database.
         if Users.query.filter(Users.username==username).all() != []:
@@ -248,6 +248,9 @@ def register():
         email = request.form['email']
         password = request.form['password']
         password2 = request.form['password2']
+
+        if (password != password2):
+            return render_template('form.html', error = 'Passwords do not match')
 
         createUser(username,password,first,last)
 
